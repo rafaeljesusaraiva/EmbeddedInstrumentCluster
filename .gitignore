@@ -1,0 +1,15 @@
+# Buildroot generated output — too large for git
+buildroot/output/
+buildroot/dl/
+
+# Build artifacts
+HelloCluster/build_desktop/
+HelloCluster/build_pi/
+
+# Qt generated files
+*.autosave
+*_autogen/
+
+# OS files
+.DS_Store
+Thumbs.db
