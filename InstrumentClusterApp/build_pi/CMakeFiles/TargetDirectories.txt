@@ -1,0 +1,5 @@
+/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/ClusterApp.dir
+/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/edit_cache.dir
+/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/rebuild_cache.dir
+/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/ClusterApp_autogen_timestamp_deps.dir
+/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/ClusterApp_autogen.dir

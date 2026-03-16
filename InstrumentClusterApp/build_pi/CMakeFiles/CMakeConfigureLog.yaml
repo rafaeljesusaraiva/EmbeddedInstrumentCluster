@@ -1,0 +1,249 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:228 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The target system is: Buildroot - 1 - armv8l
+      The host system is: Linux - 6.6.87.2-microsoft-standard-WSL2 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++ 
+      Build flags: -D_LARGEFILE_SOURCE;-D_LARGEFILE64_SOURCE;-D_FILE_OFFSET_BITS=64;-O2;-g0;-D_FORTIFY_SOURCE=1
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/3.28.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/CMakeScratch/TryCompile-vXA5aE"
+      binary: "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/CMakeScratch/TryCompile-vXA5aE"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1"
+      CMAKE_CXX_FLAGS_DEBUG: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/share/buildroot;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/share/buildroot"
+      CMAKE_SYSROOT: "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/CMakeScratch/TryCompile-vXA5aE'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9d262/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9d262.dir/build.make CMakeFiles/cmTC_9d262.dir/build
+        gmake[1]: Entering directory '/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/CMakeScratch/TryCompile-vXA5aE'
+        Building CXX object CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o
+        /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot   -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1   -DNDEBUG   -v -o CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++.br_real
+        Target: arm-buildroot-linux-gnueabihf
+        Configured with: ./configure --prefix=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --sysconfdir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --enable-plugins --enable-lto --with-gmp=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-mpc=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-mpfr=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-pkgversion='Buildroot 2025.02.11-53-g7ad18b940f-dirty' --with-bugurl=https://gitlab.com/buildroot.org/buildroot/-/issues --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a53 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 13.4.0 (Buildroot 2025.02.11-53-g7ad18b940f-dirty) 
+        COLLECT_GCC_OPTIONS='--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-O2' '-g0' '-D' '_FORTIFY_SOURCE=1' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a53' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv8-a+crc+simd' '-march=armv8-a+crc+simd' '-dumpdir' 'CMakeFiles/cmTC_9d262.dir/'
+         /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/cc1plus -quiet -v -isysroot /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot -D_GNU_SOURCE -D _LARGEFILE_SOURCE -D _LARGEFILE64_SOURCE -D _FILE_OFFSET_BITS=64 -D _FORTIFY_SOURCE=1 -D NDEBUG /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9d262.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-a53 -mfloat-abi=hard -mfpu=neon-vfpv4 -mabi=aapcs-linux -mtls-dialect=gnu -marm -mlibarch=armv8-a+crc+simd -march=armv8-a+crc+simd -g0 -O2 -version -fstack-protector-strong -fPIE -o /tmp/ccFl5jE3.s
+        GNU C++17 (Buildroot 2025.02.11-53-g7ad18b940f-dirty) version 13.4.0 (arm-buildroot-linux-gnueabihf)
+        	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.1.1, MPC version 1.3.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/local/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0
+         /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0/arm-buildroot-linux-gnueabihf
+         /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0/backward
+         /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include
+         /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include-fixed
+         /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include
+         /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include
+        End of search list.
+        Compiler executable checksum: 7a28cbd1b595ade35c4c5a5232561fc3
+        COLLECT_GCC_OPTIONS='--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-O2' '-g0' '-D' '_FORTIFY_SOURCE=1' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a53' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv8-a+crc+simd' '-march=armv8-a+crc+simd' '-dumpdir' 'CMakeFiles/cmTC_9d262.dir/'
+         /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/as -v -march=armv8-a+crc+simd -mfloat-abi=hard -mfpu=neon-vfpv4 -meabi=5 -o CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccFl5jE3.s
+        GNU assembler version 2.43.1 (arm-buildroot-linux-gnueabihf) using BFD version (GNU Binutils) 2.43.1
+        COMPILER_PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/
+        LIBRARY_PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-O2' '-g0' '-D' '_FORTIFY_SOURCE=1' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a53' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv8-a+crc+simd' '-march=armv8-a+crc+simd' '-dumpdir' 'CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_9d262
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d262.dir/link.txt --verbose=1
+        /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1   -DNDEBUG  -v CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9d262 
+        Using built-in specs.
+        COLLECT_GCC=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++.br_real
+        COLLECT_LTO_WRAPPER=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/lto-wrapper
+        Target: arm-buildroot-linux-gnueabihf
+        Configured with: ./configure --prefix=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --sysconfdir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --enable-plugins --enable-lto --with-gmp=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-mpc=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-mpfr=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-pkgversion='Buildroot 2025.02.11-53-g7ad18b940f-dirty' --with-bugurl=https://gitlab.com/buildroot.org/buildroot/-/issues --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a53 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 13.4.0 (Buildroot 2025.02.11-53-g7ad18b940f-dirty) 
+        COMPILER_PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/
+        LIBRARY_PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/
+        COLLECT_GCC_OPTIONS='--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-O2' '-g0' '-D' '_FORTIFY_SOURCE=1' '-D' 'NDEBUG' '-v' '-o' 'cmTC_9d262' '-shared-libgcc' '-mcpu=cortex-a53' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv8-a+crc+simd' '-march=armv8-a+crc+simd' '-dumpdir' 'cmTC_9d262.'
+         /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/collect2 -plugin /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/liblto_plugin.so -plugin-opt=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccs0U2CV.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -pie -o cmTC_9d262 /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/Scrt1.o /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/crtbeginS.o -L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0 -L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib -L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib -z now -z relro CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/crtendS.o /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o
+        COLLECT_GCC_OPTIONS='--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-O2' '-g0' '-D' '_FORTIFY_SOURCE=1' '-D' 'NDEBUG' '-v' '-o' 'cmTC_9d262' '-shared-libgcc' '-mcpu=cortex-a53' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv8-a+crc+simd' '-march=armv8-a+crc+simd' '-dumpdir' 'cmTC_9d262.'
+        gmake[1]: Leaving directory '/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/CMakeScratch/TryCompile-vXA5aE'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0]
+          add: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0/arm-buildroot-linux-gnueabihf]
+          add: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0/backward]
+          add: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include]
+          add: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include-fixed]
+          add: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include]
+          add: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+        end of search list found
+        collapse include dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0] ==> [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0]
+        collapse include dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0/arm-buildroot-linux-gnueabihf] ==> [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/arm-buildroot-linux-gnueabihf]
+        collapse include dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0/backward] ==> [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/backward]
+        collapse include dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include] ==> [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include]
+        collapse include dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include-fixed] ==> [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include-fixed]
+        collapse include dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include] ==> [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include]
+        collapse include dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include] ==> [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+        implicit include dirs: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/arm-buildroot-linux-gnueabihf;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/backward;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include-fixed;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:159 (message)"
+      - "/usr/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(arm-buildroot-linux-gnueabihf-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/CMakeScratch/TryCompile-vXA5aE']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9d262/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_9d262.dir/build.make CMakeFiles/cmTC_9d262.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/CMakeScratch/TryCompile-vXA5aE']
+        ignore line: [Building CXX object CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot   -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1   -DNDEBUG   -v -o CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++.br_real]
+        ignore line: [Target: arm-buildroot-linux-gnueabihf]
+        ignore line: [Configured with: ./configure --prefix=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --sysconfdir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --enable-plugins --enable-lto --with-gmp=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-mpc=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-mpfr=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-pkgversion='Buildroot 2025.02.11-53-g7ad18b940f-dirty' --with-bugurl=https://gitlab.com/buildroot.org/buildroot/-/issues --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a53 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 13.4.0 (Buildroot 2025.02.11-53-g7ad18b940f-dirty) ]
+        ignore line: [COLLECT_GCC_OPTIONS='--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-O2' '-g0' '-D' '_FORTIFY_SOURCE=1' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a53' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv8-a+crc+simd' '-march=armv8-a+crc+simd' '-dumpdir' 'CMakeFiles/cmTC_9d262.dir/']
+        ignore line: [ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/cc1plus -quiet -v -isysroot /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot -D_GNU_SOURCE -D _LARGEFILE_SOURCE -D _LARGEFILE64_SOURCE -D _FILE_OFFSET_BITS=64 -D _FORTIFY_SOURCE=1 -D NDEBUG /usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_9d262.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mcpu=cortex-a53 -mfloat-abi=hard -mfpu=neon-vfpv4 -mabi=aapcs-linux -mtls-dialect=gnu -marm -mlibarch=armv8-a+crc+simd -march=armv8-a+crc+simd -g0 -O2 -version -fstack-protector-strong -fPIE -o /tmp/ccFl5jE3.s]
+        ignore line: [GNU C++17 (Buildroot 2025.02.11-53-g7ad18b940f-dirty) version 13.4.0 (arm-buildroot-linux-gnueabihf)]
+        ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.1.1  MPC version 1.3.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/local/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0]
+        ignore line: [ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0/arm-buildroot-linux-gnueabihf]
+        ignore line: [ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include/c++/13.4.0/backward]
+        ignore line: [ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include]
+        ignore line: [ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/include-fixed]
+        ignore line: [ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/include]
+        ignore line: [ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 7a28cbd1b595ade35c4c5a5232561fc3]
+        ignore line: [COLLECT_GCC_OPTIONS='--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-O2' '-g0' '-D' '_FORTIFY_SOURCE=1' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a53' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv8-a+crc+simd' '-march=armv8-a+crc+simd' '-dumpdir' 'CMakeFiles/cmTC_9d262.dir/']
+        ignore line: [ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/as -v -march=armv8-a+crc+simd -mfloat-abi=hard -mfpu=neon-vfpv4 -meabi=5 -o CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o /tmp/ccFl5jE3.s]
+        ignore line: [GNU assembler version 2.43.1 (arm-buildroot-linux-gnueabihf) using BFD version (GNU Binutils) 2.43.1]
+        ignore line: [COMPILER_PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/]
+        ignore line: [LIBRARY_PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-O2' '-g0' '-D' '_FORTIFY_SOURCE=1' '-D' 'NDEBUG' '-v' '-o' 'CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mcpu=cortex-a53' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv8-a+crc+simd' '-march=armv8-a+crc+simd' '-dumpdir' 'CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_9d262]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9d262.dir/link.txt --verbose=1]
+        ignore line: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -O2 -g0 -D_FORTIFY_SOURCE=1   -DNDEBUG  -v CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_9d262 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++.br_real]
+        ignore line: [COLLECT_LTO_WRAPPER=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/lto-wrapper]
+        ignore line: [Target: arm-buildroot-linux-gnueabihf]
+        ignore line: [Configured with: ./configure --prefix=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --sysconfdir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/etc --enable-static --target=arm-buildroot-linux-gnueabihf --with-sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot --enable-__cxa_atexit --with-gnu-ld --disable-libssp --disable-multilib --disable-decimal-float --enable-plugins --enable-lto --with-gmp=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-mpc=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-mpfr=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host --with-pkgversion='Buildroot 2025.02.11-53-g7ad18b940f-dirty' --with-bugurl=https://gitlab.com/buildroot.org/buildroot/-/issues --without-zstd --disable-libquadmath --disable-libquadmath-support --enable-tls --enable-threads --without-isl --without-cloog --with-abi=aapcs-linux --with-cpu=cortex-a53 --with-fpu=neon-vfpv4 --with-float=hard --with-mode=arm --enable-languages=c,c++ --with-build-time-tools=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/bin --enable-shared --disable-libgomp]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 13.4.0 (Buildroot 2025.02.11-53-g7ad18b940f-dirty) ]
+        ignore line: [COMPILER_PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/bin/]
+        ignore line: [LIBRARY_PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/lib/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib/:/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-fstack-protector-strong' '-fPIE' '-pie' '--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot' '-D' '_LARGEFILE_SOURCE' '-D' '_LARGEFILE64_SOURCE' '-D' '_FILE_OFFSET_BITS=64' '-O2' '-g0' '-D' '_FORTIFY_SOURCE=1' '-D' 'NDEBUG' '-v' '-o' 'cmTC_9d262' '-shared-libgcc' '-mcpu=cortex-a53' '-mfloat-abi=hard' '-mfpu=neon-vfpv4' '-mabi=aapcs-linux' '-mtls-dialect=gnu' '-marm' '-mlibarch=armv8-a+crc+simd' '-march=armv8-a+crc+simd' '-dumpdir' 'cmTC_9d262.']
+        link line: [ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/collect2 -plugin /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/liblto_plugin.so -plugin-opt=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccs0U2CV.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot --eh-frame-hdr -dynamic-linker /lib/ld-linux-armhf.so.3 -X -m armelf_linux_eabi -pie -o cmTC_9d262 /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/Scrt1.o /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/crtbeginS.o -L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0 -L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/lib -L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib -L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib -z now -z relro CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/crtendS.o /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o]
+          arg [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/libexec/gcc/arm-buildroot-linux-gnueabihf/13.4.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccs0U2CV.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld-linux-armhf.so.3] ==> ignore
+          arg [-X] ==> ignore
+          arg [-m] ==> ignore
+          arg [armelf_linux_eabi] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_9d262] ==> ignore
+          arg [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/Scrt1.o] ==> obj [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/Scrt1.o]
+          arg [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o] ==> obj [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o]
+          arg [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/crtbeginS.o] ==> obj [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/crtbeginS.o]
+          arg [-L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0] ==> dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0]
+          arg [-L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/lib] ==> dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/lib]
+          arg [-L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib] ==> dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib]
+          arg [-L/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib] ==> dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [CMakeFiles/cmTC_9d262.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/crtendS.o] ==> obj [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/crtendS.o]
+          arg [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o] ==> obj [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o]
+        collapse library dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0] ==> [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0]
+        collapse library dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/../../../../arm-buildroot-linux-gnueabihf/lib] ==> [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/lib]
+        collapse library dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib] ==> [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib]
+        collapse library dir [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib] ==> [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/Scrt1.o;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crti.o;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/crtbeginS.o;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0/crtendS.o;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/crtn.o]
+        implicit dirs: [/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/lib/gcc/arm-buildroot-linux-gnueabihf/13.4.0;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/lib;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/lib;/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+...

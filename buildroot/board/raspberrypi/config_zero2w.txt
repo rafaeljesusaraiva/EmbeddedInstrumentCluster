@@ -1,0 +1,22 @@
+disable_splash=1
+avoid_warnings=1
+boot_delay=0
+
+start_file=start.elf
+fixup_file=fixup.dat
+kernel=zImage
+device_tree=bcm2710-rpi-zero-2-w.dtb
+
+disable_overscan=1
+initial_turbo=30
+
+hdmi_force_hotplug=1
+hdmi_group=2
+hdmi_mode=87
+hdmi_cvt=1920 720 60 6 0 0 0
+hdmi_drive=2
+gpu_mem=64
+
+dtoverlay=miniuart-bt
+dtparam=spi=on
+dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=25

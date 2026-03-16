@@ -1,0 +1,24 @@
+{
+	"BUILD_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/ClusterApp_autogen",
+	"CMAKE_BINARY_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp",
+	"CMAKE_SOURCE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp",
+	"GENERATOR" : "Unix Makefiles",
+	"INCLUDE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/ClusterApp_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/fonts/DejaVuSans.ttf",
+		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/fonts/DejaVuSans-Bold.ttf"
+	],
+	"LOCK_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/ClusterApp_autogen.dir/AutoRcc_resources_UVLADIE3JM_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "UVLADIE3JM",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles/ClusterApp_autogen.dir/AutoRcc_resources_UVLADIE3JM_Used.txt",
+	"SOURCE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/resources.qrc",
+	"VERBOSITY" : 0
+}

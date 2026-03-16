@@ -1,0 +1,197 @@
+{
+	"BUILD_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen",
+	"CMAKE_BINARY_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster",
+	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
+	"CMAKE_LIST_FILES" : 
+	[
+		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/CMakeLists.txt",
+		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/CMakeFiles/3.28.3/CMakeSystem.cmake",
+		"/usr/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake",
+		"/usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake",
+		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/CMakeFiles/3.28.3/CMakeCXXCompiler.cmake",
+		"/usr/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake",
+		"/usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake",
+		"/usr/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake",
+		"/usr/share/cmake-3.28/Modules/Platform/Linux.cmake",
+		"/usr/share/cmake-3.28/Modules/Platform/UnixPaths.cmake",
+		"/usr/share/cmake-3.28/Modules/CMakeCXXInformation.cmake",
+		"/usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake",
+		"/usr/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake",
+		"/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake",
+		"/usr/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"/usr/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake",
+		"/usr/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake",
+		"/usr/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5Config.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"/usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QComposePlatformInputContextPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSEmulatorIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsEglDeviceIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSKmsGbmIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEglFSX11IntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevKeyboardPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevMousePlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTabletPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QEvdevTouchScreenPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QIbusPlatformInputContextPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLibInputPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QLinuxFbIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalEglIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QVncIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbEglIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbGlxIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5Gui_QXcbIntegrationPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"/usr/share/cmake-3.28/Modules/CMakeParseArguments.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5SerialBus/Qt5SerialBusConfigVersion.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5SerialBus/Qt5SerialBusConfig.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5SerialBus/Qt5SerialBus_PassThruCanBusPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5SerialBus/Qt5SerialBus_PeakCanBusPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5SerialBus/Qt5SerialBus_SocketCanBusPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5SerialBus/Qt5SerialBus_TinyCanBusPlugin.cmake",
+		"/usr/lib/x86_64-linux-gnu/cmake/Qt5SerialBus/Qt5SerialBus_VirtualCanBusPlugin.cmake",
+		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/resources.qrc"
+	],
+	"CMAKE_SOURCE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster",
+	"DEP_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/deps",
+	"DEP_FILE_RULE_NAME" : "ClusterApp_autogen/timestamp",
+	"HEADERS" : 
+	[
+		[
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/CenterPanel.h",
+			"MU",
+			"UVLADIE3JM/moc_CenterPanel.cpp",
+			null
+		],
+		[
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/ClusterWindow.h",
+			"MU",
+			"UVLADIE3JM/moc_ClusterWindow.cpp",
+			null
+		],
+		[
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/GaugeWidget.h",
+			"MU",
+			"UVLADIE3JM/moc_GaugeWidget.cpp",
+			null
+		],
+		[
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/PillBadge.h",
+			"MU",
+			"UVLADIE3JM/moc_PillBadge.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : 
+	[
+		"DESKTOP_MOCK",
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_SERIALBUS_LIB",
+		"QT_WIDGETS_LIB"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"/usr/include/x86_64-linux-gnu/qt5",
+		"/usr/include/x86_64-linux-gnu/qt5/QtCore",
+		"/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++",
+		"/usr/include/x86_64-linux-gnu/qt5/QtWidgets",
+		"/usr/include/x86_64-linux-gnu/qt5/QtGui",
+		"/usr/include/x86_64-linux-gnu/qt5/QtSerialBus",
+		"/usr/include/c++/13",
+		"/usr/include/x86_64-linux-gnu/c++/13",
+		"/usr/include/c++/13/backward",
+		"/usr/lib/gcc/x86_64-linux-gnu/13/include",
+		"/usr/local/include",
+		"/usr/include/x86_64-linux-gnu",
+		"/usr/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"/usr/bin/c++",
+		"-std=gnu++17",
+		"-dM",
+		"-E",
+		"-c",
+		"/usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 8,
+	"PARSE_CACHE_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/CMakeFiles/ClusterApp_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
+	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/CMakeFiles/ClusterApp_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/CenterPanel.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/ClusterWindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/GaugeWidget.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/PillBadge.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/main.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

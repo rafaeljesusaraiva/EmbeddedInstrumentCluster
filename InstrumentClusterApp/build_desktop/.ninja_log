@@ -1,0 +1,26 @@
+# ninja log v5
+3	30	1773608140093805694	ClusterApp_autogen/timestamp	5e0777cc7b0a6d16
+3	30	1773608140093805694	ClusterApp_autogen/mocs_compilation.cpp	5e0777cc7b0a6d16
+32	1332	1773606898511863072	CMakeFiles/ClusterApp.dir/src/CenterPanel.cpp.o	8d62452d91b0a6dd
+3	30	1773608140093805694	/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/timestamp	5e0777cc7b0a6d16
+3	30	1773608140093805694	/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/mocs_compilation.cpp	5e0777cc7b0a6d16
+203	1344	1773607520203391042	CMakeFiles/ClusterApp.dir/ClusterApp_autogen/mocs_compilation.cpp.o	3361d456dfed4b41
+1241	1593	1773608141653744864	ClusterApp	e5337057f5777b53
+386	1731	1773604047391566137	CMakeFiles/ClusterApp.dir/src/PillBadge.cpp.o	e6c170007bf9bcd3
+31	1170	1773604133914110599	CMakeFiles/ClusterApp.dir/src/main.cpp.o	73287c8af080398b
+204	1486	1773607520345552200	CMakeFiles/ClusterApp.dir/src/ClusterWindow.cpp.o	5175e72dcc7135b3
+30	1241	1773608141308445829	CMakeFiles/ClusterApp.dir/src/GaugeWidget.cpp.o	d7d95ccc446448f3
+9	281	1773615055123738944	ClusterApp_autogen/timestamp	5e0777cc7b0a6d16
+9	281	1773615055123738944	ClusterApp_autogen/mocs_compilation.cpp	5e0777cc7b0a6d16
+9	281	1773615055123738944	/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/timestamp	5e0777cc7b0a6d16
+9	281	1773615055123738944	/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/mocs_compilation.cpp	5e0777cc7b0a6d16
+282	372	1773615055217446716	ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp	20c0b920e1a7b3f2
+282	372	1773615055217446716	/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp	20c0b920e1a7b3f2
+372	1398	1773615056248000480	CMakeFiles/ClusterApp.dir/ClusterApp_autogen/mocs_compilation.cpp.o	3361d456dfed4b41
+373	1458	1773615056305039993	CMakeFiles/ClusterApp.dir/src/PillBadge.cpp.o	e6c170007bf9bcd3
+373	1528	1773615056374302259	CMakeFiles/ClusterApp.dir/src/main.cpp.o	73287c8af080398b
+373	1617	1773615056468010031	CMakeFiles/ClusterApp.dir/src/GaugeWidget.cpp.o	d7d95ccc446448f3
+373	1624	1773615056472084282	CMakeFiles/ClusterApp.dir/src/CenterPanel.cpp.o	8d62452d91b0a6dd
+373	1725	1773615056573940556	CMakeFiles/ClusterApp.dir/src/ClusterWindow.cpp.o	5175e72dcc7135b3
+373	2308	1773615057156558442	CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o	4917f596ceb7678d
+2308	2729	1773615057576206290	ClusterApp	ed731d0c0ce28554

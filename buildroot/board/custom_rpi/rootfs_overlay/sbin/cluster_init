@@ -1,0 +1,22 @@
+#!/bin/sh
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+
+/sbin/mdev -s
+
+# Black screen immediately
+cat /dev/zero > /dev/fb0 2>/dev/null || true
+
+# CAN setup deferred in background
+(
+    sleep 2
+    /sbin/ip link set can0 type can bitrate 500000
+    /sbin/ip link set can0 up
+) &
+
+# Launch Qt app
+export QT_QPA_PLATFORM=linuxfb
+export QT_QPA_PLATFORM_PLUGIN_PATH=/usr/lib/qt/plugins/platforms
+export QT_QPA_FONTDIR=/usr/lib/fonts
+exec /usr/bin/ClusterApp
