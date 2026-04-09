@@ -364,12 +364,39 @@ CMakeFiles/ClusterApp.dir/src/main.cpp.o: \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qfontinfo.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtWidgets/qsizepolicy.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qkeysequence.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QTimer \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qtimer.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qbasictimer.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/QCanBusDevice \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusdevice.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusframe.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qtserialbusglobal.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qtserialbus-config.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusdeviceinfo.h
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusdeviceinfo.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QTimer \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qtimer.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qbasictimer.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QVariant \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qvariant.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QList \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qlist.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbus.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QThread \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qthread.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qdeadlinetimer.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qelapsedtimer.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/future \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/mutex \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/bits/std_mutex.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/bits/unique_lock.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/condition_variable \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/bits/atomic_futex.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/bits/std_thread.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/CanWorker.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QObject \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qobject.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QMutex \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qmutex.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qtsan_impl.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/QCanBus \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbus.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/QCanBusDevice \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusdevice.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/QCanBusFrame \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusframe.h

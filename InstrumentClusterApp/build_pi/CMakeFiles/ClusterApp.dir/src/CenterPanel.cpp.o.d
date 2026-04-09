@@ -351,6 +351,12 @@ CMakeFiles/ClusterApp.dir/src/CenterPanel.cpp.o: \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qkeysequence.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QString \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qstring.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QTimer \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qtimer.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qbasictimer.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/AppFont.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QByteArray \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qbytearray.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/QPainter \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qpainter.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qtextoption.h \
@@ -383,7 +389,4 @@ CMakeFiles/ClusterApp.dir/src/CenterPanel.cpp.o: \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/tr1/modified_bessel_func.tcc \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/tr1/poly_hermite.tcc \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/tr1/poly_laguerre.tcc \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/tr1/riemann_zeta.tcc \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/AppFont.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QByteArray \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qbytearray.h
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/tr1/riemann_zeta.tcc

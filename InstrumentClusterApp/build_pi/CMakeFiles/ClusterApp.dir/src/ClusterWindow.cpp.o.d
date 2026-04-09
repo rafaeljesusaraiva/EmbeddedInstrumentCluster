@@ -349,20 +349,57 @@ CMakeFiles/ClusterApp.dir/src/ClusterWindow.cpp.o: \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtWidgets/qsizepolicy.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qcursor.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qkeysequence.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QTimer \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qtimer.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qbasictimer.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/QCanBusDevice \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusdevice.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusframe.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qtserialbusglobal.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qtserialbus-config.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusdeviceinfo.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QTimer \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qtimer.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qbasictimer.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QVariant \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qvariant.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qmap.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/variant \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QList \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qlist.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbus.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QThread \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qthread.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qdeadlinetimer.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qelapsedtimer.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/future \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/mutex \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/bits/std_mutex.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/bits/unique_lock.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/condition_variable \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/bits/atomic_futex.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/bits/std_thread.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/CanWorker.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QObject \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qobject.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QMutex \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qmutex.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qtsan_impl.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/QCanBus \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbus.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/QCanBusDevice \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusdevice.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/QCanBusFrame \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusframe.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/GaugeWidget.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/QColor \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qcolor.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QString \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qstring.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/QPixmap \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qpixmap.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QVector \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qvector.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QPointF \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qpoint.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QRectF \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qrect.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/CenterPanel.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/PillBadge.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/AppFont.h \
@@ -372,10 +409,30 @@ CMakeFiles/ClusterApp.dir/src/ClusterWindow.cpp.o: \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qpainter.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qtextoption.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qpen.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/QPainterPath \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qpainterpath.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QDateTime \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qdatetime.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QProcess \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qprocess.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/QScreen \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qscreen.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QList \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QObject \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QRect \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QSize \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qsize.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QSizeF \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/QTransform \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qtransform.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/QGuiApplication \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qguiapplication.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qcoreapplication.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qcoreevent.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qeventloop.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qinputmethod.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qlocale.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qvariant.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QtMath \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qmath.h \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/cmath \
@@ -403,31 +460,14 @@ CMakeFiles/ClusterApp.dir/src/ClusterWindow.cpp.o: \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/tr1/poly_hermite.tcc \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/tr1/poly_laguerre.tcc \
  /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/tr1/riemann_zeta.tcc \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/QGuiApplication \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qguiapplication.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qcoreapplication.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qcoreevent.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qeventloop.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qinputmethod.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qlocale.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qvariant.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qmap.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/include/c++/13.4.0/variant \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/QScreen \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qscreen.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QList \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qlist.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QObject \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qobject.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QRect \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qrect.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QSize \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qsize.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/QSizeF \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/QTransform \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qtransform.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/QCanBus \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbus.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusdevice.h \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/QCanBusFrame \
- /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialBus/qcanbusframe.h
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialPort/QSerialPortInfo \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialPort/qserialportinfo.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtSerialPort/qserialportglobal.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/QPaintEvent \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qevent.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qset.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qurl.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qfile.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtCore/qfiledevice.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qvector2d.h \
+ /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/include/qt5/QtGui/qtouchdevice.h

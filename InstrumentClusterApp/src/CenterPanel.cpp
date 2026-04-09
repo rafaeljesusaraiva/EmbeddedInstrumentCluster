@@ -1,22 +1,53 @@
 #include "CenterPanel.h"
+#include "AppFont.h"
 #include <QPainter>
 #include <QPainterPath>
 #include <QtMath>
-#include "AppFont.h"
 
 static const QColor C_BG     = QColor(8,   5,   2);
-static const QColor C_TRACK  = QColor(28,  16,  4);
-static const QColor C_TEAL   = QColor(180, 95,  15);  // orange replaces teal
+static const QColor C_TRACK  = QColor(35,  20,  6);
+static const QColor C_ORANGE = QColor(180, 95,  15);
 static const QColor C_WHITE  = QColor(240, 235, 225);
 static const QColor C_DIM    = QColor(130, 90,  40);
 static const QColor C_MUTED  = QColor(45,  28,  8);
-static const QColor C_GREEN  = QColor(32,  200,  80);  // keep green for CAN online
-static const QColor C_RED    = QColor(220,  50,  50);
-static const QColor C_AMBER  = QColor(180, 140, 15);
-static const QColor C_ORANGE = QColor(180, 85,  15);
+static const QColor C_GREEN  = QColor(32,  200, 80);
+static const QColor C_RED    = QColor(220, 50,  50);
+static const QColor C_AMBER  = QColor(220, 180, 40);
+static const QColor C_BLINK  = QColor(240, 160, 0);   // blinker orange
 
+CenterPanel::CenterPanel(QWidget *parent) : QWidget(parent) {
+}
 
-CenterPanel::CenterPanel(QWidget *parent) : QWidget(parent) {}
+// Draw a filled arrow pointing left or right
+static void drawArrow(QPainter &p, double cx, double cy,
+                      double w, double h, bool leftArrow, QColor color)
+{
+    QPainterPath arrow;
+    if (leftArrow) {
+        // Left-pointing arrow
+        arrow.moveTo(cx,          cy);           // tip
+        arrow.lineTo(cx + w*0.45, cy - h*0.50); // top-right
+        arrow.lineTo(cx + w*0.45, cy - h*0.22); // notch top
+        arrow.lineTo(cx + w,      cy - h*0.22); // tail top
+        arrow.lineTo(cx + w,      cy + h*0.22); // tail bottom
+        arrow.lineTo(cx + w*0.45, cy + h*0.22); // notch bottom
+        arrow.lineTo(cx + w*0.45, cy + h*0.50); // bottom-right
+        arrow.closeSubpath();
+    } else {
+        // Right-pointing arrow
+        arrow.moveTo(cx + w,      cy);           // tip
+        arrow.lineTo(cx + w*0.55, cy - h*0.50); // top-left
+        arrow.lineTo(cx + w*0.55, cy - h*0.22); // notch top
+        arrow.lineTo(cx,          cy - h*0.22); // tail top
+        arrow.lineTo(cx,          cy + h*0.22); // tail bottom
+        arrow.lineTo(cx + w*0.55, cy + h*0.22); // notch bottom
+        arrow.lineTo(cx + w*0.55, cy + h*0.50); // bottom-left
+        arrow.closeSubpath();
+    }
+    p.setPen(Qt::NoPen);
+    p.setBrush(color);
+    p.drawPath(arrow);
+}
 
 void CenterPanel::paintEvent(QPaintEvent *) {
     QPainter p(this);
@@ -29,18 +60,19 @@ void CenterPanel::paintEvent(QPaintEvent *) {
     p.fillRect(rect(), C_BG);
 
     // ─────────────────────────────────────────────────────────────────────
-    // Rows  (% of H, must sum to 100)
-    //   0%  – 13%   time + temp
-    //   13% – 27%   steering bar
-    //   27% – 57%   TEMP + FUEL bars
-    //   57% – 80%   icon row (single merged row)
-    //   80% – 100%  CAN pill + odometer
+    // Row 0   0%  –  11%   time + temp
+    // Row 1  11%  –  21%   steering bar
+    // Row 2  21%  –  44%   blinker arrows  (NEW — replaces empty space)
+    // Row 3  44%  –  62%   TEMP + FUEL bars
+    // Row 4  62%  –  80%   warning icons
+    // Row 5  80%  –  91%   light icons
+    // Row 6  91%  – 100%   CAN pill + odometer
     // ─────────────────────────────────────────────────────────────────────
 
     // ── Row 0: Time | Temp ────────────────────────────────────────────────
     {
         double rY = H * 0.01;
-        double rH = H * 0.12;
+        double rH = H * 0.10;
         int    fs = qBound(13, qRound(rH * 0.60), 32);
 
         p.setPen(C_WHITE);
@@ -56,7 +88,7 @@ void CenterPanel::paintEvent(QPaintEvent *) {
 
     // ── Row 1: Steering bar ───────────────────────────────────────────────
     {
-        double rY   = H * 0.14;
+        double rY   = H * 0.12;
         double bH   = qBound(5.0, H * 0.018, 12.0);
         double bW   = W * 0.80;
         double bX   = cx - bW / 2.0;
@@ -76,7 +108,7 @@ void CenterPanel::paintEvent(QPaintEvent *) {
         double norm  = (steerAngle + 160.0) / 320.0;
         double fillW = qAbs(norm - 0.5) * bW;
         double fillX = norm < 0.5 ? (cx - fillW) : cx;
-        p.setBrush(QColor(220, 120, 20)); 
+        p.setBrush(C_ORANGE);
         p.drawRoundedRect(QRectF(fillX, rY, fillW, bH), 3, 3);
 
         p.setBrush(C_WHITE);
@@ -88,19 +120,89 @@ void CenterPanel::paintEvent(QPaintEvent *) {
         p.drawText(QRectF(cx - 26, rY + bH + 3, 52, angFs + 4),
                    Qt::AlignCenter,
                    QString("%1°").arg(qRound(steerAngle)));
+
+        // --- DRAW PEDALS (Below Steering Bar) ---
+        double pedY = rY + bH + 22; 
+        p.setFont(QFont(appFont(), 8, QFont::Bold));
+        
+        // Brake Indicator (Left Side)
+        if (brakePressed) {
+            p.setBrush(C_RED); p.setPen(Qt::NoPen);
+            p.drawRoundedRect(cx - 50, pedY, 40, 14, 3, 3);
+            p.setPen(Qt::white);
+            p.drawText(QRectF(cx - 50, pedY, 40, 14), Qt::AlignCenter, "BRK");
+        }
+        
+        // Accelerator Gauge (Right Side)
+        double accW = 40.0 * (accelerator / 255.0);
+        p.setBrush(C_TRACK); p.setPen(Qt::NoPen);
+        p.drawRoundedRect(cx + 10, pedY, 40, 14, 3, 3);
+        p.setBrush(C_GREEN);
+        p.drawRoundedRect(cx + 10, pedY, accW, 14, 3, 3);
+        p.setPen(C_DIM);
+        p.drawText(QRectF(cx + 10, pedY + 16, 40, 12), Qt::AlignCenter, "ACC");
     }
 
-    // ── Row 2: TEMP + FUEL bars ───────────────────────────────────────────
+    // ── Row 2: Blinker arrows ─────────────────────────────────────────────
     {
-        double rY   = H * 0.27;
-        double rH   = H * 0.28;
+        double rY   = H * 0.22;
+        double rH   = H * 0.20;
+        double arW  = W * 0.28;   // arrow width
+        double arH  = rH * 0.55;  // arrow height
+
+        // Left arrow — left quarter of panel
+        double lAX  = cx - W * 0.42;
+        double lAY  = rY + rH * 0.22;
+
+        // Right arrow — right quarter of panel
+        double rAX  = cx + W * 0.14;
+        double rAY  = rY + rH * 0.22;
+
+        // Directly follow CAN bus status (1 = Left, 2 = Right, 3 = Hazard)
+        bool showLeft  = (blinkerStatus == 1 || blinkerStatus == 3);
+        bool showRight = (blinkerStatus == 2 || blinkerStatus == 3);
+
+        // Left arrow
+        QColor leftCol  = showLeft ? C_BLINK : QColor(45, 28, 8, 80);
+        drawArrow(p, lAX, lAY, arW, arH, true, leftCol);
+
+        // Optional: draw outline when off so shape is visible
+        if (!showLeft) {
+            p.setPen(QPen(QColor(60, 38, 10, 100), 1));
+            p.setBrush(Qt::NoBrush);
+        }
+
+        // Right arrow
+        QColor rightCol = showRight ? C_BLINK : QColor(45, 28, 8, 80);
+        drawArrow(p, rAX, rAY, arW, arH, false, rightCol);
+
+        // Hazard indicator — strictly tied to HAZARD state
+        if (blinkerStatus == 3) {
+            p.setPen(C_BLINK);
+            p.setFont(QFont(appFont(), qBound(9, qRound(rH * 0.18), 16), QFont::Bold));
+            p.drawText(QRectF(cx - 30, rY + rH * 0.35, 60, rH * 0.3), Qt::AlignCenter, "HZD");
+        }
+
+        // Wiper status — small indicator below arrows
+        if (wiperStatus > 0) {
+            QString wiperTxt = wiperStatus == 2 ? "WIPER HI" : "WIPER LO";
+            p.setPen(C_DIM);
+            p.setFont(QFont(appFont(), qBound(7, qRound(rH * 0.14), 12)));
+            p.drawText(QRectF(cx - 40, rY + rH * 0.78, 80, rH * 0.2), Qt::AlignCenter, wiperTxt);
+        }
+    }
+
+    // ── Row 3: TEMP + FUEL bars ───────────────────────────────────────────
+    {
+        double rY   = H * 0.44;
+        double rH   = H * 0.17;
         double bW   = W * 0.36;
-        double bH   = qBound(8.0, rH * 0.14, 16.0);
+        double bH   = qBound(8.0, rH * 0.18, 16.0);
         double lX   = cx - W * 0.02 - bW;
         double rX   = cx + W * 0.02;
 
-        int lblFs = qBound(9,  qRound(rH * 0.15), 17);
-        int valFs = qBound(13, qRound(rH * 0.26), 30);
+        int lblFs = qBound(9,  qRound(rH * 0.20), 16);
+        int valFs = qBound(13, qRound(rH * 0.32), 28);
 
         auto drawBar = [&](double x, double pct,
                            QColor fill, QString label, QString valStr) {
@@ -119,7 +221,7 @@ void CenterPanel::paintEvent(QPaintEvent *) {
             p.setBrush(fill);
             p.drawRoundedRect(QRectF(x, barY, fw, bH), bH/2, bH/2);
 
-            double valY = barY + bH + 6;
+            double valY = barY + bH + 4;
             p.setPen(C_WHITE);
             p.setFont(QFont(appFont(), valFs, QFont::Bold));
             p.drawText(QRectF(x, valY, bW, valFs + 6),
@@ -135,35 +237,58 @@ void CenterPanel::paintEvent(QPaintEvent *) {
                 "TEMP", QString("%1°C").arg(qRound(coolant)));
         drawBar(rX, fuelPct, fuelCol,
                 "FUEL", QString("%1%").arg(qRound(fuelPct * 100)));
+
+        // --- DRAW DOORS (Center of the Bars) ---
+        double carW = 16;
+        double carH = 34;
+        
+        // Car Body Outline
+        p.setPen(QPen(C_DIM, 1.5));
+        p.setBrush(Qt::NoBrush);
+        p.drawRoundedRect(cx - carW/2, rY + 6, carW, carH, 4, 4);
+        
+        // Driver Door (Left Side Open)
+        if (doorDriverOpen) { 
+            p.setBrush(C_RED);
+            p.setPen(Qt::NoPen);
+            p.drawRect(cx - carW/2 - 6, rY + 10, 6, 14);
+        }
+        
+        // Passenger Door (Right Side Open)
+        if (doorPassengerOpen) {
+            p.setBrush(C_RED);
+            p.setPen(Qt::NoPen);
+            p.drawRect(cx + carW/2, rY + 10, 6, 14);
+        }
     }
 
-    // ── Row 3: ALL icons (single row, 9 icons evenly spaced) ─────────────
+    // ── Row 4: Warning icons ──────────────────────────────────────────────
     {
-        double rY   = H * 0.57;
-        double rH   = H * 0.22;
-        double icoD = qBound(26.0, rH * 0.62, 52.0);
+        double rY   = H * 0.62;
+        double rH   = H * 0.17;
+        double icoD = qBound(22.0, rH * 0.62, 46.0);
         double icoR = icoD / 2.0;
         double icoY = rY + rH * 0.42;
-        int    symFs = qBound(10, qRound(icoD * 0.44), 20);
-        int    capFs = qBound(6,  qRound(icoD * 0.24), 10);
+        int    symFs = qBound(9, qRound(icoD * 0.42), 18);
+        int    capFs = qBound(5, qRound(icoD * 0.22), 9);
 
-        struct Icon {
-            QString sym;
-            QString cap;
-            bool    on;
-            QColor  col;
-        };
+        // Dynamic light status (1 = MINIMOS/LOW, 2 = MEDIOS/MEDIUM)
+        bool isLightOn = (lightMode > 0);
+        QColor currentLightCol = (lightMode == 2) ? C_ORANGE : C_GREEN;
+        QString currentLightCap = (lightMode == 2) ? "MED" : "LOW";
 
+        struct Icon { QString sym; QString cap; bool on; QColor col; };
         QVector<Icon> icons = {
-            { "⚙", "SYS",  false,      C_MUTED  },
-            { "⚠", "OIL",  warnOil,   C_AMBER  },
-            { "⚠", "ABS",  warnABS,   C_AMBER  },
-            { "▣", "ENG",  warnEng,   C_ORANGE },
-            { "⛽", "FUEL", warnFuel,  C_ORANGE },
-            { "⚠", "BAT",  warnBat,   C_AMBER  },
-            { "◉", "LOW",  lightLow,  C_TEAL   },
-            { "◑", "HIGH", lightHigh, C_TEAL   },
-            { "◎", "FOG",  lightFog,  C_TEAL   },
+            { "⚙", "SYS",  false,    C_MUTED  },
+            { "⚠", "OIL",  warnOil,  C_AMBER  },
+            { "⚠", "ABS",  warnABS,  C_AMBER  },
+            { "▣", "ENG",  warnEng,  C_ORANGE },
+            { "⛽", "FUEL", warnFuel, C_ORANGE },
+            { "⚠", "BAT",  warnBat,  C_AMBER  },
+            // The position/low beam icon now changes color and text based on lightMode
+            { "◉", currentLightCap, isLightOn, currentLightCol }, 
+            { "◑", "HIGH", lightHigh, QColor(60, 120, 240) }, // Swapped to standard Blue for High Beams
+            { "◎", "FOG",  lightFog,  C_ORANGE },
         };
 
         double spacing = W / (double)(icons.size() + 1);
@@ -173,7 +298,6 @@ void CenterPanel::paintEvent(QPaintEvent *) {
             bool   on  = icons[i].on;
             QColor col = on ? icons[i].col : C_MUTED;
 
-            // circle background
             if (on) {
                 p.setBrush(icons[i].col.darker(260));
                 p.setPen(QPen(icons[i].col, 1.5));
@@ -183,31 +307,20 @@ void CenterPanel::paintEvent(QPaintEvent *) {
             }
             p.drawEllipse(QPointF(ix, icoY), icoR, icoR);
 
-            // symbol (top 65% of circle)
             p.setPen(col);
             p.setFont(QFont(appFont(), symFs));
-            p.drawText(QRectF(ix - icoR,
-                              icoY - icoR,
-                              icoD,
-                              icoD * 0.65),
-                       Qt::AlignCenter, icons[i].sym);
+            p.drawText(QRectF(ix - icoR, icoY - icoR, icoD, icoD * 0.65), Qt::AlignCenter, icons[i].sym);
 
-            // caption (bottom 35% of circle)
             p.setFont(QFont(appFont(), capFs, QFont::Bold));
-            p.drawText(QRectF(ix - icoR,
-                              icoY + icoR * 0.05,
-                              icoD,
-                              icoR * 0.90),
-                       Qt::AlignCenter, icons[i].cap);
+            p.drawText(QRectF(ix - icoR, icoY + icoR * 0.05, icoD, icoR * 0.90), Qt::AlignCenter, icons[i].cap);
         }
     }
 
-    // ── Row 4: CAN pill + odometer ────────────────────────────────────────
+    // ── Row 5: CAN pill + odometer ────────────────────────────────────────
     {
-        double rY   = H * 0.81;
-        double rH   = H * 0.19;
-
-        double pillH = qBound(16.0, rH * 0.36, 26.0);
+        double rY    = H * 0.82;
+        double rH    = H * 0.18;
+        double pillH = qBound(16.0, rH * 0.36, 24.0);
         double pillW = W * 0.52;
         int    pFs   = qBound(8, qRound(pillH * 0.50), 13);
 
@@ -224,11 +337,10 @@ void CenterPanel::paintEvent(QPaintEvent *) {
         p.setFont(QFont(appFont(), pFs));
         p.drawText(canBox, Qt::AlignCenter, canStatus);
 
-        int odoFs = qBound(11, qRound(rH * 0.36), 20);
+        int odoFs = qBound(11, qRound(rH * 0.32), 18);
         p.setPen(C_DIM);
         p.setFont(QFont(appFont(), odoFs, QFont::Bold));
-        p.drawText(QRectF(cx - 110, rY + pillH + 4,
-                          220, odoFs + 6),
+        p.drawText(QRectF(cx - 110, rY + pillH + 4, 220, odoFs + 6),
                    Qt::AlignCenter,
                    QString("%1 km").arg(odometer));
     }

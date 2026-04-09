@@ -1,16 +1,16 @@
 {
-	"BUILD_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen",
-	"CMAKE_BINARY_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop",
-	"CMAKE_CURRENT_BINARY_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop",
-	"CMAKE_CURRENT_SOURCE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster",
+	"BUILD_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop/ClusterApp_autogen",
+	"CMAKE_BINARY_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp",
 	"CMAKE_EXECUTABLE" : "/usr/bin/cmake",
 	"CMAKE_LIST_FILES" : 
 	[
-		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/CMakeLists.txt",
-		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/CMakeFiles/3.28.3/CMakeSystem.cmake",
+		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/CMakeLists.txt",
+		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop/CMakeFiles/3.28.3/CMakeSystem.cmake",
 		"/usr/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake",
 		"/usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake",
-		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/CMakeFiles/3.28.3/CMakeCXXCompiler.cmake",
+		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop/CMakeFiles/3.28.3/CMakeCXXCompiler.cmake",
 		"/usr/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake",
 		"/usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake",
 		"/usr/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake",
@@ -72,41 +72,41 @@
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5SerialBus/Qt5SerialBus_SocketCanBusPlugin.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5SerialBus/Qt5SerialBus_TinyCanBusPlugin.cmake",
 		"/usr/lib/x86_64-linux-gnu/cmake/Qt5SerialBus/Qt5SerialBus_VirtualCanBusPlugin.cmake",
-		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/resources.qrc"
+		"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/resources.qrc"
 	],
-	"CMAKE_SOURCE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster",
-	"DEP_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/deps",
+	"CMAKE_SOURCE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp",
+	"DEP_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop/ClusterApp_autogen/deps",
 	"DEP_FILE_RULE_NAME" : "ClusterApp_autogen/timestamp",
 	"HEADERS" : 
 	[
 		[
-			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/CenterPanel.h",
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/CenterPanel.h",
 			"MU",
 			"UVLADIE3JM/moc_CenterPanel.cpp",
 			null
 		],
 		[
-			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/ClusterWindow.h",
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/ClusterWindow.h",
 			"MU",
 			"UVLADIE3JM/moc_ClusterWindow.cpp",
 			null
 		],
 		[
-			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/GaugeWidget.h",
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/GaugeWidget.h",
 			"MU",
 			"UVLADIE3JM/moc_GaugeWidget.cpp",
 			null
 		],
 		[
-			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/PillBadge.h",
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/PillBadge.h",
 			"MU",
 			"UVLADIE3JM/moc_PillBadge.cpp",
 			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
-	"INCLUDE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/include",
-	"MOC_COMPILATION_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/mocs_compilation.cpp",
+	"INCLUDE_DIR" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop/ClusterApp_autogen/include",
+	"MOC_COMPILATION_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop/ClusterApp_autogen/mocs_compilation.cpp",
 	"MOC_DEFINITIONS" : 
 	[
 		"DESKTOP_MOCK",
@@ -150,41 +150,41 @@
 		"-c",
 		"/usr/share/cmake-3.28/Modules/CMakeCXXCompilerABI.cpp"
 	],
-	"MOC_PREDEFS_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/ClusterApp_autogen/moc_predefs.h",
+	"MOC_PREDEFS_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop/ClusterApp_autogen/moc_predefs.h",
 	"MOC_RELAXED_MODE" : false,
 	"MOC_SKIP" : [],
 	"MULTI_CONFIG" : false,
 	"PARALLEL" : 8,
-	"PARSE_CACHE_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/CMakeFiles/ClusterApp_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop/CMakeFiles/ClusterApp_autogen.dir/ParseCache.txt",
 	"QT_MOC_EXECUTABLE" : "/usr/lib/qt5/bin/moc",
 	"QT_UIC_EXECUTABLE" : "/usr/lib/qt5/bin/uic",
 	"QT_VERSION_MAJOR" : 5,
 	"QT_VERSION_MINOR" : 15,
-	"SETTINGS_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/CMakeFiles/ClusterApp_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE" : "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop/CMakeFiles/ClusterApp_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
 		[
-			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/CenterPanel.cpp",
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/CenterPanel.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/ClusterWindow.cpp",
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/ClusterWindow.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/GaugeWidget.cpp",
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/GaugeWidget.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/PillBadge.cpp",
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/PillBadge.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/src/main.cpp",
+			"/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/main.cpp",
 			"MU",
 			null
 		]

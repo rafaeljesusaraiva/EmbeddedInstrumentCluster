@@ -203,6 +203,30 @@ ClusterApp_autogen/mocs_compilation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClusterApp.dir/build.make CMakeFiles/ClusterApp.dir/ClusterApp_autogen/mocs_compilation.cpp.s
 .PHONY : ClusterApp_autogen/mocs_compilation.cpp.s
 
+src/CanWorker.o: src/CanWorker.cpp.o
+.PHONY : src/CanWorker.o
+
+# target to build an object file
+src/CanWorker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClusterApp.dir/build.make CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o
+.PHONY : src/CanWorker.cpp.o
+
+src/CanWorker.i: src/CanWorker.cpp.i
+.PHONY : src/CanWorker.i
+
+# target to preprocess a source file
+src/CanWorker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClusterApp.dir/build.make CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.i
+.PHONY : src/CanWorker.cpp.i
+
+src/CanWorker.s: src/CanWorker.cpp.s
+.PHONY : src/CanWorker.s
+
+# target to generate assembly for a file
+src/CanWorker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClusterApp.dir/build.make CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.s
+.PHONY : src/CanWorker.cpp.s
+
 src/CenterPanel.o: src/CenterPanel.cpp.o
 .PHONY : src/CenterPanel.o
 
@@ -340,6 +364,9 @@ help:
 	@echo "... ClusterApp_autogen/mocs_compilation.o"
 	@echo "... ClusterApp_autogen/mocs_compilation.i"
 	@echo "... ClusterApp_autogen/mocs_compilation.s"
+	@echo "... src/CanWorker.o"
+	@echo "... src/CanWorker.i"
+	@echo "... src/CanWorker.s"
 	@echo "... src/CenterPanel.o"
 	@echo "... src/CenterPanel.i"
 	@echo "... src/CenterPanel.s"

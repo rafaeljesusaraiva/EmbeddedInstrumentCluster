@@ -1,4 +1,4 @@
-# Install script for directory: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster
+# Install script for directory: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

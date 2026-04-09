@@ -168,10 +168,24 @@ CMakeFiles/ClusterApp.dir/src/PillBadge.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ClusterApp.dir/src/PillBadge.cpp.s"
 	/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/PillBadge.cpp -o CMakeFiles/ClusterApp.dir/src/PillBadge.cpp.s
 
+CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o: CMakeFiles/ClusterApp.dir/flags.make
+CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/CanWorker.cpp
+CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o: CMakeFiles/ClusterApp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o"
+	/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o -MF CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o.d -o CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o -c /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/CanWorker.cpp
+
+CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.i"
+	/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/CanWorker.cpp > CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.i
+
+CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.s"
+	/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/CanWorker.cpp -o CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.s
+
 CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o: CMakeFiles/ClusterApp.dir/flags.make
 CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o: ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp
 CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o: CMakeFiles/ClusterApp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o"
 	/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/arm-buildroot-linux-gnueabihf-g++ --sysroot=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o -MF CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o.d -o CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o -c /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp
 
 CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.i: cmake_force
@@ -190,6 +204,7 @@ ClusterApp_OBJECTS = \
 "CMakeFiles/ClusterApp.dir/src/GaugeWidget.cpp.o" \
 "CMakeFiles/ClusterApp.dir/src/CenterPanel.cpp.o" \
 "CMakeFiles/ClusterApp.dir/src/PillBadge.cpp.o" \
+"CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o" \
 "CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o"
 
 # External object files for target ClusterApp
@@ -201,14 +216,16 @@ ClusterApp: CMakeFiles/ClusterApp.dir/src/ClusterWindow.cpp.o
 ClusterApp: CMakeFiles/ClusterApp.dir/src/GaugeWidget.cpp.o
 ClusterApp: CMakeFiles/ClusterApp.dir/src/CenterPanel.cpp.o
 ClusterApp: CMakeFiles/ClusterApp.dir/src/PillBadge.cpp.o
+ClusterApp: CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o
 ClusterApp: CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o
 ClusterApp: CMakeFiles/ClusterApp.dir/build.make
 ClusterApp: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5Widgets.so.5.15.14
+ClusterApp: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5SerialPort.so.5.15.14
 ClusterApp: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5SerialBus.so.5.15.14
 ClusterApp: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5Gui.so.5.15.14
 ClusterApp: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5Core.so.5.15.14
 ClusterApp: CMakeFiles/ClusterApp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ClusterApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable ClusterApp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ClusterApp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

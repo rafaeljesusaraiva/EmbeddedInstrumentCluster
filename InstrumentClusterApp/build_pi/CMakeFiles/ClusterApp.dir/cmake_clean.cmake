@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o.d"
   "CMakeFiles/ClusterApp.dir/ClusterApp_autogen/mocs_compilation.cpp.o"
   "CMakeFiles/ClusterApp.dir/ClusterApp_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o"
+  "CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o.d"
   "CMakeFiles/ClusterApp.dir/src/CenterPanel.cpp.o"
   "CMakeFiles/ClusterApp.dir/src/CenterPanel.cpp.o.d"
   "CMakeFiles/ClusterApp.dir/src/ClusterWindow.cpp.o"

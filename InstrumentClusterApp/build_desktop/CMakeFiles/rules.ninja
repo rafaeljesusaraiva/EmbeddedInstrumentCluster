@@ -42,7 +42,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster -B/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/HelloCluster/build_desktop
+  command = /usr/bin/cmake --regenerate-during-build -S/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp -B/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_desktop
   description = Re-running CMake...
   generator = 1
 

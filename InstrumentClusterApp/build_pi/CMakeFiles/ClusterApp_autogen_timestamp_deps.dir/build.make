@@ -66,8 +66,9 @@ include CMakeFiles/ClusterApp_autogen_timestamp_deps.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/ClusterApp_autogen_timestamp_deps.dir/progress.make
 
-CMakeFiles/ClusterApp_autogen_timestamp_deps: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5Core.so.5.15.14
 CMakeFiles/ClusterApp_autogen_timestamp_deps: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/moc
+CMakeFiles/ClusterApp_autogen_timestamp_deps: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5SerialPort.so.5.15.14
+CMakeFiles/ClusterApp_autogen_timestamp_deps: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5Core.so.5.15.14
 CMakeFiles/ClusterApp_autogen_timestamp_deps: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5Widgets.so.5.15.14
 CMakeFiles/ClusterApp_autogen_timestamp_deps: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/bin/uic
 CMakeFiles/ClusterApp_autogen_timestamp_deps: /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/libQt5SerialBus.so.5.15.14

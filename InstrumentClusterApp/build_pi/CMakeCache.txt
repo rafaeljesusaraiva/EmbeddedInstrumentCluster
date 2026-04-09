@@ -229,6 +229,9 @@ Qt5Gui_DIR:PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host
 //The directory containing a CMake configuration file for Qt5SerialBus.
 Qt5SerialBus_DIR:PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/cmake/Qt5SerialBus
 
+//The directory containing a CMake configuration file for Qt5SerialPort.
+Qt5SerialPort_DIR:PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/cmake/Qt5SerialPort
+
 //The directory containing a CMake configuration file for Qt5Widgets.
 Qt5Widgets_DIR:PATH=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/buildroot/output/host/arm-buildroot-linux-gnueabihf/sysroot/usr/lib/cmake/Qt5Widgets
 

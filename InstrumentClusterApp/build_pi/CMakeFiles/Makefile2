@@ -84,12 +84,12 @@ CMakeFiles/ClusterApp.dir/all: CMakeFiles/ClusterApp_autogen_timestamp_deps.dir/
 CMakeFiles/ClusterApp.dir/all: CMakeFiles/ClusterApp_autogen.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClusterApp.dir/build.make CMakeFiles/ClusterApp.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClusterApp.dir/build.make CMakeFiles/ClusterApp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target ClusterApp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11 "Built target ClusterApp"
 .PHONY : CMakeFiles/ClusterApp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ClusterApp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles 12
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ClusterApp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles 0
 .PHONY : CMakeFiles/ClusterApp.dir/rule
@@ -136,7 +136,7 @@ CMakeFiles/ClusterApp_autogen_timestamp_deps.dir/clean:
 CMakeFiles/ClusterApp_autogen.dir/all: CMakeFiles/ClusterApp_autogen_timestamp_deps.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClusterApp_autogen.dir/build.make CMakeFiles/ClusterApp_autogen.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ClusterApp_autogen.dir/build.make CMakeFiles/ClusterApp_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles --progress-num=11 "Built target ClusterApp_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/CMakeFiles --progress-num=12 "Built target ClusterApp_autogen"
 .PHONY : CMakeFiles/ClusterApp_autogen.dir/all
 
 # Build rule for subdir invocation for target.

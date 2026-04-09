@@ -1,17 +1,27 @@
 #pragma once
 #include <QWidget>
+#include <QtSerialBus/qcanbusdevice.h>
+#include <QtSerialBus/qcanbusframe.h>
 #include <QTimer>
+#include <QVariant>
+#include <QList>
+
+#include <QtSerialBus/qcanbus.h>
+#include <QtSerialBus/qcanbusdevice.h>
+#include <QtSerialBus/qcanbusframe.h>
+
+#include <QThread>
+#include "CanWorker.h"
 
 class GaugeWidget;
 class CenterPanel;
 class PillBadge;
-
-#ifndef DESKTOP_MOCK
-#include <QCanBusDevice>
-#endif
+class DebugOverlay;
 
 class ClusterWindow : public QWidget {
     Q_OBJECT
+    friend class DebugOverlay;
+
 public:
     explicit ClusterWindow(QWidget *parent = nullptr);
 
@@ -20,35 +30,53 @@ protected:
 
 private slots:
     void updateClock();
-    void checkCan();
-
-#ifndef DESKTOP_MOCK
-    void onCanFrames();
-#endif
 
 private:
+QThread *m_canThread;
+    CanWorker *m_canWorker;
+
+    // Store debug data here so paintEvent is fast
+    QString m_spiStatus = "CHECKING...";
+    QString m_can0Status = "CHECKING...";
+    QString m_can0State = "CHECKING...";
+    QStringList m_dmesgLines;
+
+    int m_zeroRpmCounter = 0;
+    int m_zeroSpeedCounter = 0;
+    
+    void refreshSystemDebug();
+
     void updateFuelPill();
     void updateGear();
+    void appendDebug(const QString &msg);
+
+    double m_targetRpm = 0;
+    double m_targetSpeed = 0;
+
+    double m_displayRpm = 0;
+    double m_displaySpeed = 0;
+
+    QTimer *m_uiSmoothTimer; // A timer dedicated to the animation
 
     GaugeWidget  *m_rpmGauge;
     GaugeWidget  *m_spdGauge;
     PillBadge    *m_rpmPill;
     PillBadge    *m_spdPill;
     CenterPanel  *m_center;
+    DebugOverlay *m_debugOverlay = nullptr;
+    QTimer *m_debugRefreshTimer = nullptr;
 
-    QTimer *m_detectTimer;
-    QTimer *m_clockTimer;
+    QTimer          *m_clockTimer;
 
-    double  m_speed   = 0;
-    double  m_rpm     = 0;
-    double  m_coolant = 0;
-    double  m_fuel    = 0;
+    double  m_speed    = 0;
+    double  m_rpm      = 0;
+    double  m_fuel     = 0;
     bool    m_canFound = false;
+
+    bool        m_showDebug  = false;
+    QStringList m_debugLines;
+    int         m_canAttempts = 0;
 
     int m_winW = 1920;
     int m_winH = 720;
-
-#ifndef DESKTOP_MOCK
-    QCanBusDevice *m_canDev = nullptr;
-#endif
 };

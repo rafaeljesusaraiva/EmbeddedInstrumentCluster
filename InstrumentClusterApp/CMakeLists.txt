@@ -14,6 +14,7 @@ set(SOURCES
     src/GaugeWidget.cpp
     src/CenterPanel.cpp
     src/PillBadge.cpp
+    src/CanWorker.cpp
     src/resources.qrc        # ← ADD THIS
 )
 
@@ -22,12 +23,14 @@ set(HEADERS
     src/GaugeWidget.h
     src/CenterPanel.h
     src/PillBadge.h
+    src/CanWorker.h
 )
 
 # ── Qt packages ───────────────────────────────────────────────────────────
 find_package(Qt5 REQUIRED COMPONENTS
     Core
     Widgets
+    SerialPort
     SerialBus
 )
 
@@ -36,6 +39,7 @@ add_executable(ClusterApp ${SOURCES} ${HEADERS})
 target_link_libraries(ClusterApp
     Qt5::Core
     Qt5::Widgets
+    Qt5::SerialPort
     Qt5::SerialBus
 )
 

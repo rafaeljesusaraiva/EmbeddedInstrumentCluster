@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "ClusterApp_autogen/timestamp" "custom" "ClusterApp_autogen/deps"
   "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp" "CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o" "gcc" "CMakeFiles/ClusterApp.dir/ClusterApp_autogen/UVLADIE3JM/qrc_resources.cpp.o.d"
   "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/build_pi/ClusterApp_autogen/mocs_compilation.cpp" "CMakeFiles/ClusterApp.dir/ClusterApp_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/ClusterApp.dir/ClusterApp_autogen/mocs_compilation.cpp.o.d"
+  "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/CanWorker.cpp" "CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o" "gcc" "CMakeFiles/ClusterApp.dir/src/CanWorker.cpp.o.d"
   "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/CenterPanel.cpp" "CMakeFiles/ClusterApp.dir/src/CenterPanel.cpp.o" "gcc" "CMakeFiles/ClusterApp.dir/src/CenterPanel.cpp.o.d"
   "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/ClusterWindow.cpp" "CMakeFiles/ClusterApp.dir/src/ClusterWindow.cpp.o" "gcc" "CMakeFiles/ClusterApp.dir/src/ClusterWindow.cpp.o.d"
   "/home/rafaeljesusaraiva/BUILDROOT_PIZERO2W/InstrumentClusterApp/src/GaugeWidget.cpp" "CMakeFiles/ClusterApp.dir/src/GaugeWidget.cpp.o" "gcc" "CMakeFiles/ClusterApp.dir/src/GaugeWidget.cpp.o.d"

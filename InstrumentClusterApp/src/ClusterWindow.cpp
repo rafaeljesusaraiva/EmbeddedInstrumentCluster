@@ -3,44 +3,175 @@
 #include "CenterPanel.h"
 #include "PillBadge.h"
 #include "AppFont.h"
+// Assuming "CanWorker.h" is included in ClusterWindow.h
 
 #include <QPainter>
+#include <QPainterPath>
 #include <QDateTime>
 #include <QProcess>
-#include <QtMath>
-#include <QGuiApplication>
 #include <QScreen>
+#include <QGuiApplication>
+#include <QtMath>
+#include <QSerialPortInfo>
+#include <QPaintEvent>
 
-#ifndef DESKTOP_MOCK
-#include <QCanBus>
-#include <QCanBusFrame>
-#endif
+class DebugOverlay : public QWidget {
+public:
+    ClusterWindow* m_parent;
 
+    DebugOverlay(ClusterWindow* parent) : QWidget(parent), m_parent(parent) {
+        // Ensures clicks pass through to UI underneath if necessary
+        setAttribute(Qt::WA_TransparentForMouseEvents);
+    }
+
+protected:
+    void paintEvent(QPaintEvent *) override {
+        if (!m_parent->m_showDebug) return;
+
+        QPainter p(this);
+        // Semi-transparent dark panel over entire screen
+        p.fillRect(rect(), QColor(0, 0, 0, 200));
+
+        double pad  = 40;
+        double lineH = 28;
+        double startY = pad;
+
+        // Title
+        p.setPen(QColor(180, 95, 15));
+        p.setFont(QFont(appFont(), 20, QFont::Bold));
+        p.drawText(QRectF(pad, startY, m_parent->m_winW - pad*2, 36),
+                   Qt::AlignLeft | Qt::AlignVCenter,
+                   "CLUSTER DEBUG — Waiting for CAN bus...");
+        startY += 50;
+
+        // Divider
+        p.setPen(QPen(QColor(80, 45, 8), 1));
+        p.drawLine(QPointF(pad, startY), QPointF(m_parent->m_winW - pad, startY));
+        startY += 16;
+
+        // System info block
+        p.setFont(QFont(appFont(), 13));
+
+        auto drawInfo = [&](QString label, QString value, QColor valColor) {
+            p.setPen(QColor(130, 90, 40));
+            p.drawText(QRectF(pad, startY, 280, lineH),
+                       Qt::AlignLeft | Qt::AlignVCenter, label);
+            p.setPen(valColor);
+            p.drawText(QRectF(pad + 290, startY, m_parent->m_winW - pad*2 - 290, lineH),
+                       Qt::AlignLeft | Qt::AlignVCenter, value);
+            startY += lineH;
+        };
+
+        drawInfo("Screen size:",
+                 QString("%1 x %2").arg(m_parent->m_winW).arg(m_parent->m_winH),
+                 QColor(240, 235, 225));
+
+        drawInfo("CAN attempts:",
+                 QString::number(m_parent->m_canAttempts),
+                 m_parent->m_canFound ? QColor(32, 200, 80) : QColor(220, 50, 50));
+
+        drawInfo("CAN status:",
+                 m_parent->m_center->canStatus,
+                 m_parent->m_canFound ? QColor(32, 200, 80) : QColor(220, 50, 50));
+
+        // Check SPI devices
+        drawInfo("SPI Status:", m_parent->m_spiStatus, (m_parent->m_spiStatus == "FOUND" ? Qt::green : Qt::red));
+
+        // Check CAN interface
+        drawInfo("can0 Status:", m_parent->m_can0Status, (m_parent->m_can0Status == "EXISTS" ? Qt::green : Qt::red));
+        drawInfo("can0 State:", m_parent->m_can0State, (m_parent->m_can0State == "UP" ? Qt::green : Qt::red));
+
+        // Font status
+        drawInfo("Font family:",
+                 QString::fromUtf8(qgetenv("CLUSTER_FONT")),
+                 QColor(240, 235, 225));
+
+        // Qt platform
+        drawInfo("Qt platform:",
+                 QString::fromUtf8(qgetenv("QT_QPA_PLATFORM")),
+                 QColor(240, 235, 225));
+
+        startY += 8;
+        p.setPen(QPen(QColor(80, 45, 8), 1));
+        p.drawLine(QPointF(pad, startY), QPointF(m_parent->m_winW - pad, startY));
+        startY += 14;
+
+        // Log lines
+        p.setFont(QFont(appFont(), 11));
+        for (const QString &line : m_parent->m_debugLines) {
+            if (startY + lineH > m_parent->m_winH - pad) break;
+            QColor lineCol = line.contains("ERROR") || line.contains("FAIL")
+                           ? QColor(220, 80, 80)
+                           : line.contains("OK") || line.contains("ONLINE")
+                             ? QColor(32, 200, 80)
+                             : QColor(160, 130, 80);
+            p.setPen(lineCol);
+            p.drawText(QRectF(pad, startY, m_parent->m_winW - pad*2, lineH),
+                       Qt::AlignLeft | Qt::AlignVCenter, line);
+            startY += lineH;
+        }
+
+        // Show dmesg CAN/SPI lines WITHOUT blocking the UI thread
+        startY += 8;
+        p.setPen(QColor(180, 95, 15));
+        p.setFont(QFont(appFont(), 11, QFont::Bold));
+        p.drawText(QRectF(pad, startY, m_parent->m_winW - pad*2, lineH),
+                Qt::AlignLeft, "dmesg (SPI/CAN):");
+        startY += lineH;
+
+        p.setFont(QFont(appFont(), 10));
+        for (const QString &line : m_parent->m_dmesgLines) {
+            QString low = line.toLower();
+            if (startY + lineH > m_parent->m_winH - 40) break;
+
+            bool isErr = low.contains("error") || low.contains("fail");
+            p.setPen(isErr ? QColor(220, 80, 80) : QColor(160, 200, 130));
+            p.drawText(QRectF(pad, startY, m_parent->m_winW - pad*2, lineH),
+                    Qt::AlignLeft | Qt::AlignVCenter,
+                    line.trimmed().left(120));
+            startY += lineH;
+        }
+
+        // Bottom hint
+        p.setPen(QColor(80, 55, 20));
+        p.setFont(QFont(appFont(), 11));
+        p.drawText(QRectF(pad, m_parent->m_winH - 36, m_parent->m_winW - pad*2, 28),
+                   Qt::AlignCenter,
+                   "Debug overlay auto-hides when CAN comes online");
+    }
+};
+
+// ── Main ClusterWindow Logic ──────────────────────────────────────────────
 ClusterWindow::ClusterWindow(QWidget *parent)
     : QWidget(parent)
 {
     setAttribute(Qt::WA_OpaquePaintEvent);
-    setStyleSheet("background-color: #08050 2;");
+    setStyleSheet("background-color: #080502;");
 
 #ifdef DESKTOP_MOCK
     m_winW = 1920;
     m_winH = 720;
     setFixedSize(m_winW, m_winH);
 #else
-    // On Pi: use actual screen resolution — no hardcoding
-    QScreen *screen = QGuiApplication::primaryScreen();
+    QScreen *screen = qApp->primaryScreen();
     if (screen) {
-        QRect geo = screen->geometry();
-        m_winW = geo.width();
-        m_winH = geo.height();
+        m_winW = screen->size().width();
+        m_winH = screen->size().height();
     } else {
         m_winW = 1920;
         m_winH = 720;
     }
-    // Fullscreen — size is set by showFullScreen(), not setFixedSize
 #endif
 
-    // ── Layout — all values derived from m_winW / m_winH ─────────────────
+    m_debugRefreshTimer = new QTimer(this);
+    connect(m_debugRefreshTimer, &QTimer::timeout, this, &ClusterWindow::refreshSystemDebug);
+    
+    // Only start polling background shell commands if debug is visible
+    if (m_showDebug) {
+        m_debugRefreshTimer->start(2000); 
+        refreshSystemDebug(); 
+    }
+
     const int gaugeSize = m_winH - 60;
     const int gaugeTop  = 10;
     const int pillW     = qRound(gaugeSize * 0.56);
@@ -53,13 +184,13 @@ ClusterWindow::ClusterWindow(QWidget *parent)
 
     // ── RPM gauge ─────────────────────────────────────────────────────────
     GaugeWidget::Config rpmCfg;
-    rpmCfg.unit              = "RPM";
-    rpmCfg.minVal            = 0;
-    rpmCfg.maxVal            = 7000;
-    rpmCfg.tickStep          = 1000;
-    rpmCfg.arcStartPct       = 0.62;
-    rpmCfg.arcSpanPct        = 0.76;
-    rpmCfg.arcActiveColor    = QColor(180, 95, 15);
+    rpmCfg.unit           = "RPM";
+    rpmCfg.minVal         = 0;
+    rpmCfg.maxVal         = 7000;
+    rpmCfg.tickStep       = 1000;
+    rpmCfg.arcStartPct    = 0.62;
+    rpmCfg.arcSpanPct     = 0.76;
+    rpmCfg.arcActiveColor = QColor(180, 95, 15);
 
     m_rpmGauge = new GaugeWidget(rpmCfg, this);
     m_rpmGauge->setGeometry(gaugeL, gaugeTop, gaugeSize, gaugeSize);
@@ -68,18 +199,18 @@ ClusterWindow::ClusterWindow(QWidget *parent)
     m_rpmPill->setGeometry(gaugeL + (gaugeSize - pillW) / 2,
                             pillY, pillW, pillH);
     m_rpmPill->leftLabel  = "FUEL";
-    m_rpmPill->midValue   = "--%";
+    m_rpmPill->midValue   = "0%";
     m_rpmPill->rightValue = "---KM";
 
     // ── Speed gauge ───────────────────────────────────────────────────────
     GaugeWidget::Config spdCfg;
-    spdCfg.unit              = "km/h";
-    spdCfg.minVal            = 0;
-    spdCfg.maxVal            = 200;
-    spdCfg.tickStep          = 10;
-    spdCfg.arcStartPct       = 0.62;
-    spdCfg.arcSpanPct        = 0.76;
-    spdCfg.arcActiveColor    = QColor(180, 95, 15);
+    spdCfg.unit           = "km/h";
+    spdCfg.minVal         = 0;
+    spdCfg.maxVal         = 200;
+    spdCfg.tickStep       = 10;
+    spdCfg.arcStartPct    = 0.62;
+    spdCfg.arcSpanPct     = 0.76;
+    spdCfg.arcActiveColor = QColor(180, 95, 15);
 
     m_spdGauge = new GaugeWidget(spdCfg, this);
     m_spdGauge->setGeometry(gaugeR, gaugeTop, gaugeSize, gaugeSize);
@@ -95,17 +226,103 @@ ClusterWindow::ClusterWindow(QWidget *parent)
     m_center = new CenterPanel(this);
     m_center->setGeometry(centerX, 0, centerW, m_winH);
 
+#ifndef DESKTOP_MOCK
+    // ── Setup Background Thread for CAN ───────────────────────────────────
+    m_canThread = new QThread(this);
+    m_canWorker = new CanWorker();
+    
+    // Move the worker to the background thread
+    m_canWorker->moveToThread(m_canThread);
+    
+    // When the thread starts, tell the worker to begin connecting/listening
+    connect(m_canThread, &QThread::started, m_canWorker, &CanWorker::startWorker);
+    
+    // Ensure memory is cleaned up when the app closes
+    connect(m_canThread, &QThread::finished, m_canWorker, &QObject::deleteLater);
+    
+    // Start the background thread
+    m_canThread->start();
+
+    // ── UI Rendering Loop (30 FPS) ────────────────────────────────────────
+    m_uiSmoothTimer = new QTimer(this);
+    connect(m_uiSmoothTimer, &QTimer::timeout, this, [this]() {
+        
+        // Safely fetch the absolute latest values from the background thread
+        VehicleData data = m_canWorker->getData();
+
+        // Update local variables for calculations (like updateGear)
+        m_rpm = data.rpm;
+        m_speed = data.speed;
+
+        // Pass to gauges (GaugeWidget handles its own visual smoothing)
+        m_rpmGauge->setValue(m_rpm);
+        m_spdGauge->setValue(m_speed);
+
+        m_center->blinkerStatus = data.blinkerStatus;
+        m_center->lightMode = data.lightMode;
+        m_center->lightHigh = data.lightHigh; // <-- This was missing!
+        m_center->lightFog = data.lightFog;
+        
+        m_center->doorDriverOpen = data.doorDriverOpen;
+        m_center->doorPassengerOpen = data.doorPassengerOpen;
+        m_center->brakePressed = data.brakePressed;
+        m_center->accelerator = data.accelerator;
+
+        // Handle CAN connection status changes
+        if (data.canOnline && !m_center->canOnline) {
+            m_center->canOnline = true;
+            m_center->canStatus = "CAN0 ONLINE";
+            m_canFound = true;
+            
+            // 🛑 COMPLETELY SHUT DOWN DEBUG OPERATIONS
+            if (m_showDebug) {
+                m_showDebug = false;
+                
+                // 1. Stop the background shell commands
+                if (m_debugRefreshTimer) {
+                    m_debugRefreshTimer->stop();
+                    m_debugRefreshTimer->deleteLater();
+                    m_debugRefreshTimer = nullptr;
+                }
+                
+                // 2. Destroy the overlay widget completely
+                if (m_debugOverlay) {
+                    m_debugOverlay->hide();
+                    m_debugOverlay->deleteLater(); // Frees the memory
+                    m_debugOverlay = nullptr;
+                }
+            }
+        }
+
+        m_center->update();
+        updateFuelPill();
+        updateGear(); 
+    });
+    
+    // 33ms = ~30 FPS. Eases CPU load significantly on Pi Zero 2.
+    m_uiSmoothTimer->start(33); 
+#endif
+
+#ifndef DESKTOP_MOCK
+    // Zero state on Pi
+    m_rpmGauge->setValue(0);
+    m_spdGauge->setValue(0);
+    m_center->coolant    = 0;
+    m_center->m_fuel     = 0;
+    m_center->steerAngle = 0;
+    m_center->odometer   = 0;
+    m_center->canOnline  = false;
+    m_center->canStatus  = "WAITING FOR CAN...";
+    m_center->tempStr    = "-- °C";
+#endif
+
     // ── Timers ────────────────────────────────────────────────────────────
     m_clockTimer = new QTimer(this);
-    connect(m_clockTimer, &QTimer::timeout,
-            this, &ClusterWindow::updateClock);
+    connect(m_clockTimer, &QTimer::timeout, this, &ClusterWindow::updateClock);
     m_clockTimer->start(1000);
-    updateClock();
 
-    m_detectTimer = new QTimer(this);
-    connect(m_detectTimer, &QTimer::timeout,
-            this, &ClusterWindow::checkCan);
-    m_detectTimer->start(1500);
+    appendDebug("ClusterWindow initialized");
+    appendDebug(QString("Screen: %1x%2").arg(m_winW).arg(m_winH));
 
 #ifdef DESKTOP_MOCK
     QTimer *mockTimer = new QTimer(this);
@@ -117,51 +334,72 @@ ClusterWindow::ClusterWindow(QWidget *parent)
         m_fuel  = 0.3  + 0.3  * (0.5 + 0.5 * qSin(t * 0.13));
         m_rpmGauge->setValue(m_rpm);
         m_spdGauge->setValue(m_speed);
-        m_center->steerAngle = 80.0 * qSin(t * 0.3);
-        m_center->coolant    = 80.0 + 20.0 * qSin(t * 0.1);
-        m_center->odometer   = 138021;
-        m_center->canOnline  = true;
-        m_center->canStatus  = "MOCK MODE";
-        m_center->warnOil    = qSin(t * 0.2) > 0.5;
-        m_center->lightLow   = qSin(t * 0.15) > 0;
-        m_center->lightHigh  = qSin(t * 0.1) > 0.7;
-        m_center->m_fuel     = m_fuel;
+        m_center->steerAngle  = 80.0 * qSin(t * 0.3);
+        m_center->coolant     = 80.0 + 20.0 * qSin(t * 0.1);
+        m_center->odometer    = 138021;
+        m_center->canOnline   = true;
+        m_center->canStatus   = "MOCK MODE";
+        m_center->warnOil     = qSin(t * 0.2) > 0.5;
+        m_center->lightLow    = qSin(t * 0.15) > 0;
+        m_center->lightHigh   = qSin(t * 0.1) > 0.7;
+        m_center->m_fuel      = m_fuel;
+        m_center->blinkerLeft  = qSin(t * 0.08) > 0.5;
+        m_center->blinkerRight = qSin(t * 0.06) > 0.7;
         m_center->update();
         updateFuelPill();
+
+        // Hide debug overlay in mock mode after 3 seconds
+        static int mockTick = 0;
+        if (++mockTick > 60) {
+            if (m_showDebug) {
+                m_showDebug = false;
+                
+                if (m_debugRefreshTimer) {
+                    m_debugRefreshTimer->stop();
+                    m_debugRefreshTimer->deleteLater();
+                    m_debugRefreshTimer = nullptr;
+                }
+                
+                if (m_debugOverlay) {
+                    m_debugOverlay->hide();
+                    m_debugOverlay->deleteLater(); 
+                    m_debugOverlay = nullptr;
+                }
+            }
+        }
     });
     mockTimer->start(50);
 #endif
-#ifndef DESKTOP_MOCK
-    // Initialize all displays to zero — wait for CAN to update
-    m_rpmGauge->setValue(0);
-    m_spdGauge->setValue(0);
 
-    m_center->coolant    = 0;
-    m_center->m_fuel     = 0;
-    m_center->steerAngle = 0;
-    m_center->odometer   = 0;
-    m_center->canOnline  = false;
-    m_center->canStatus  = "WAITING FOR CAN...";
-    m_center->warnOil    = false;
-    m_center->warnBat    = false;
-    m_center->warnABS    = false;
-    m_center->warnEng    = false;
-    m_center->warnFuel   = false;
-    m_center->lightLow   = false;
-    m_center->lightHigh  = false;
-    m_center->lightFog   = false;
-    m_center->tempStr    = "-- °C";
-
-    m_rpmPill->midValue   = "0%";
-    m_rpmPill->rightValue = "---KM";
-    m_spdPill->midValue   = "--V";
-    m_spdPill->rightValue = "0V";
-#endif
+    // Initialize overlay and raise it above gauges
+    m_debugOverlay = new DebugOverlay(this);
+    m_debugOverlay->resize(m_winW, m_winH);
+    m_debugOverlay->raise(); 
+    
+    // Hide immediately if debug is disabled on startup
+    if (!m_showDebug) {
+        m_debugOverlay->hide();
+    }
 }
 
-void ClusterWindow::paintEvent(QPaintEvent *) {
+void ClusterWindow::appendDebug(const QString &msg) {
+    QString ts = QDateTime::currentDateTime().toString("HH:mm:ss");
+    m_debugLines.append(QString("[%1] %2").arg(ts).arg(msg));
+    
+    // Keep last 20 lines
+    while (m_debugLines.size() > 20)
+        m_debugLines.removeFirst();
+        
+    update();
+    if (m_debugOverlay) m_debugOverlay->update();
+}
+
+void ClusterWindow::paintEvent(QPaintEvent *pe) {
     QPainter p(this);
-    p.fillRect(rect(), QColor(12, 8, 4));
+    
+    if (pe->rect() == rect()) {
+        p.fillRect(rect(), QColor(8, 5, 2));
+    }
 }
 
 void ClusterWindow::updateClock() {
@@ -188,120 +426,30 @@ void ClusterWindow::updateGear() {
         else if (ratio < 30) gear = 5;
         else                 gear = 6;
     }
-    // If CenterPanel has a gear field, set it here
-    // m_center->gear = gear;
-    // m_center->update();
     Q_UNUSED(gear)
 }
 
-void ClusterWindow::checkCan() {
-#ifdef DESKTOP_MOCK
-    m_detectTimer->stop();
-    return;
-#else
-    if (m_canFound) return;
+void ClusterWindow::refreshSystemDebug() {
+    // Return early to prevent unnecessary cycles if debug is off
+    if (!m_showDebug) return;
 
-    // Show user what stage we're at
-    static int attempt = 0;
-    attempt++;
-    m_center->canStatus = QString("CAN INIT... (%1)").arg(attempt);
-    m_center->update();
+    // 1. Check SPI
+    QProcess lsSpi;
+    lsSpi.start("ls", {"/dev/spidev0.0"});
+    lsSpi.waitForFinished(100); // Short timeout
+    m_spiStatus = (lsSpi.exitCode() == 0) ? "FOUND" : "NOT FOUND";
 
-    // Bring up the CAN interface
-    QProcess::execute("ip", {"link", "set", "can0",
-                             "type", "can", "bitrate", "500000"});
-    QProcess::execute("ip", {"link", "set", "can0", "up"});
+    // 2. Check CAN Interface
+    QProcess ipLink;
+    ipLink.start("ip", {"-brief", "link", "show", "can0"});
+    ipLink.waitForFinished(100);
+    QString ipOut = QString::fromUtf8(ipLink.readAllStandardOutput()).trimmed();
+    m_can0Status = ipOut.isEmpty() ? "NOT FOUND" : "EXISTS";
+    m_can0State = ipOut.contains("UP") ? "UP" : "DOWN";
 
-    QString errStr;
-    m_canDev = QCanBus::instance()->createDevice(
-                   "socketcan", "can0", &errStr);
-
-    if (!m_canDev) {
-        m_center->canStatus = "NO CAN DEVICE";
-        m_center->update();
-        return;
-    }
-
-    connect(m_canDev, &QCanBusDevice::framesReceived,
-            this, &ClusterWindow::onCanFrames);
-
-    if (!m_canDev->connectDevice()) {
-        m_center->canStatus = "CAN CONNECT FAILED";
-        m_center->update();
-        delete m_canDev;
-        m_canDev = nullptr;
-        return;
-    }
-
-    m_canFound          = true;
-    m_center->canOnline = true;
-    m_center->canStatus = "CAN ONLINE";
-    m_center->update();
-    m_detectTimer->stop();
-#endif
+    // 3. Get dmesg (last 5 relevant lines)
+    QProcess dmesg;
+    dmesg.start("sh", {"-c", "dmesg | grep -iE 'spi|mcp|can' | tail -n 5"});
+    dmesg.waitForFinished(200);
+    m_dmesgLines = QString::fromUtf8(dmesg.readAllStandardOutput()).split('\n');
 }
-
-#ifndef DESKTOP_MOCK
-void ClusterWindow::onCanFrames() {
-    if (!m_canDev) return;
-
-    while (m_canDev->framesAvailable()) {
-        QCanBusFrame frame = m_canDev->readFrame();
-        if (frame.frameType() != QCanBusFrame::DataFrame) continue;
-
-        quint32    id   = frame.frameId();
-        QByteArray data = frame.payload();
-
-        if (id == 0x7E8 && data.size() >= 3) {
-            quint8 pid = static_cast<quint8>(data[1]);
-            switch (pid) {
-
-            case 0x0D:  // Speed km/h
-                m_speed = static_cast<quint8>(data[2]);
-                m_spdGauge->setValue(m_speed);
-                updateGear();
-                break;
-
-            case 0x0C:  // RPM
-                m_rpm = ((static_cast<quint8>(data[2]) * 256)
-                          + static_cast<quint8>(data[3])) / 4.0;
-                m_rpmGauge->setValue(m_rpm);
-                break;
-
-            case 0x05:  // Coolant °C
-                m_coolant         = static_cast<quint8>(data[2]) - 40.0;
-                m_center->coolant = m_coolant;
-                m_center->tempStr = QString("%1 °C").arg(qRound(m_coolant));
-                m_center->update();
-                break;
-
-            case 0x2F:  // Fuel level 0-100%
-                m_fuel           = static_cast<quint8>(data[2]) / 255.0;
-                m_center->m_fuel = m_fuel;
-                updateFuelPill();
-                m_center->update();
-                break;
-
-            case 0x0E:  // Throttle — used as steering proxy
-                m_center->steerAngle =
-                    (static_cast<quint8>(data[2]) - 128) * 1.25;
-                m_center->update();
-                break;
-
-            case 0x5C:  // Oil pressure warning
-               m_center->warnOil = (static_cast<quint8>(data[2]) != 0);
-                m_center->update();
-                break;
-
-            case 0x61:  // Battery voltage (0x61 = generic voltage PID)
-                {
-                    double volts = static_cast<quint8>(data[2]) * 0.1;
-                    m_spdPill->midValue   = QString("%1V").arg(volts, 0, 'f', 1);
-                    m_spdPill->update();
-                }
-                break;
-            }
-        }
-    }
-}
-#endif

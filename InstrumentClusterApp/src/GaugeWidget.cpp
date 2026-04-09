@@ -3,6 +3,7 @@
 #include <QPainterPath>
 #include <QtMath>
 #include <QTimer>
+#include <QResizeEvent>
 #include "AppFont.h"
 
 static const QColor C_BG     = QColor(8,   5,   2);
@@ -11,6 +12,7 @@ static const QColor C_BORDER = QColor(50,  28,  8);
 static const QColor C_WHITE  = QColor(240, 235, 225);
 static const QColor C_DIM    = QColor(130,  90, 40);
 
+// Helper to construct the rounded rectangle track
 static QPainterPath buildPerim(QRectF r, double cr) {
     QPainterPath path;
     path.moveTo(r.left() + cr, r.top());
@@ -26,61 +28,11 @@ static QPainterPath buildPerim(QRectF r, double cr) {
     return path;
 }
 
-static QVector<QPointF> samplePath(const QPainterPath &src,
-                                    double startPct, double endPct,
-                                    double step = 1.5)
-{
-    QVector<QPointF> pts;
-    double total = src.length();
-    double s = qBound(0.0, startPct, 1.0) * total;
-    double e = qBound(0.0, endPct,   1.0) * total;
-    if (e <= s) return pts;
-    for (double d = s; d <= e + step*0.5; d += step)
-        pts << src.pointAtPercent(qMin(d, e) / total);
-    return pts;
-}
-
-static QPainterPath bandPath(const QPainterPath &outer,
-                              const QPainterPath &inner,
-                              double startPct, double endPct)
-{
-    startPct = qBound(0.0, startPct, 1.0);
-    endPct   = qBound(0.0, endPct,   1.0);
-    if (endPct <= startPct) return QPainterPath();
-    auto op = samplePath(outer, startPct, endPct);
-    auto ip = samplePath(inner, startPct, endPct);
-    if (op.isEmpty() || ip.isEmpty()) return QPainterPath();
-    QPainterPath res;
-    res.moveTo(op.first());
-    for (int i = 1; i < op.size(); i++) res.lineTo(op[i]);
-    res.lineTo(ip.last());
-    for (int i = ip.size()-2; i >= 0; i--) res.lineTo(ip[i]);
-    res.closeSubpath();
-    return res;
-}
-
-static void drawBandSolid(QPainter &p,
-                           const QPainterPath &outer,
-                           const QPainterPath &inner,
-                           double startPct, double spanPct,
-                           QColor color)
-{
-    double endPct = startPct + spanPct;
-    p.setPen(Qt::NoPen);
-    if (endPct <= 1.0) {
-        p.fillPath(bandPath(outer, inner, startPct, endPct), color);
-    } else {
-        p.fillPath(bandPath(outer, inner, startPct, 1.0),         color);
-        p.fillPath(bandPath(outer, inner, 0.0, endPct - 1.0),     color);
-    }
-}
-
 GaugeWidget::GaugeWidget(Config cfg, QWidget *parent)
     : QWidget(parent), m_cfg(cfg), m_value(0), m_displayValue(0)
 {
     setAttribute(Qt::WA_OpaquePaintEvent);
 
-    // Smooth animation timer — interpolates display value toward target
     m_animTimer = new QTimer(this);
     connect(m_animTimer, &QTimer::timeout, this, [this]() {
         double diff = m_value - m_displayValue;
@@ -97,35 +49,42 @@ GaugeWidget::GaugeWidget(Config cfg, QWidget *parent)
 void GaugeWidget::setValue(double v) {
     m_value = qBound(m_cfg.minVal, v, m_cfg.maxVal);
     if (!m_animTimer->isActive())
-        m_animTimer->start(16);  // ~60fps
+        m_animTimer->start(33);  // ~30fps 
 }
 
-void GaugeWidget::paintEvent(QPaintEvent *) {
-    QPainter p(this);
-    p.setRenderHint(QPainter::Antialiasing);
+void GaugeWidget::resizeEvent(QResizeEvent *event) {
+    // Flag the cache to be rebuilt whenever the window size changes
+    m_cacheDirty = true;
+    QWidget::resizeEvent(event);
+}
 
+void GaugeWidget::rebuildCache() {
     const double W  = width();
     const double H  = height();
+    if (W <= 0 || H <= 0) return;
+
     const double cx = W / 2.0;
     const double cy = H / 2.0;
     const double S  = qMin(W, H);
 
-    p.fillRect(rect(), C_BG);
+    // Initialize an empty transparent cache image
+    m_bgCache = QPixmap(W, H);
+    m_bgCache.fill(Qt::transparent);
 
-    // ── Geometry ──────────────────────────────────────────────────────────
+    QPainter p(&m_bgCache);
+    p.setRenderHint(QPainter::Antialiasing);
+
+    // ── 1. Geometry Math ──
     double cardPad    = S * 0.04;
     double cardRadius = S * 0.13;
-    QRectF cardRect(cx - S/2 + cardPad, cy - S/2 + cardPad,
-                    S - cardPad*2,       S - cardPad*2);
+    QRectF cardRect(cx - S/2 + cardPad, cy - S/2 + cardPad, S - cardPad*2, S - cardPad*2);
 
     double outerPad = S * 0.045;
     double innerPad = S * 0.145;
     double bandCr   = cardRadius * 0.85;
 
-    QRectF outerRect(cx - S/2 + outerPad, cy - S/2 + outerPad,
-                     S - outerPad*2,       S - outerPad*2);
-    QRectF innerRect(cx - S/2 + innerPad, cy - S/2 + innerPad,
-                     S - innerPad*2,       S - innerPad*2);
+    QRectF outerRect(cx - S/2 + outerPad, cy - S/2 + outerPad, S - outerPad*2, S - outerPad*2);
+    QRectF innerRect(cx - S/2 + innerPad, cy - S/2 + innerPad, S - innerPad*2, S - innerPad*2);
 
     QPainterPath outerPerim = buildPerim(outerRect, bandCr);
     QPainterPath innerPerim = buildPerim(innerRect, bandCr);
@@ -133,45 +92,127 @@ void GaugeWidget::paintEvent(QPaintEvent *) {
     double startPct = m_cfg.arcStartPct;
     double spanPct  = m_cfg.arcSpanPct;
 
-    // ── 1. Outer card ─────────────────────────────────────────────────────
+    // ── 2. Draw Outer Card ──
     QPainterPath cardPath;
     cardPath.addRoundedRect(cardRect, cardRadius, cardRadius);
     p.fillPath(cardPath, C_CARD);
     p.setPen(QPen(C_BORDER, 1.2));
     p.drawPath(cardPath);
 
-    // ── 2. Track band ─────────────────────────────────────────────────────
-    drawBandSolid(p, outerPerim, innerPerim,
-                  startPct, spanPct, QColor(25, 15, 5));
+    // ── 3. Pre-calculate active band points ──
+    // This turns evaluating curves at runtime into instantly connecting pre-computed dots
+    m_outerPts.clear();
+    m_innerPts.clear();
+    
+    double totalLen = outerPerim.length();
+    int numSteps = qMax(100, qRound(totalLen * spanPct / 1.5));
+    
+    for (int i = 0; i <= numSteps; i++) {
+        double pct = startPct + (spanPct * i) / numSteps;
+        while (pct > 1.0) pct -= 1.0; // handle wrap around
+        m_outerPts.append(outerPerim.pointAtPercent(pct));
+        m_innerPts.append(innerPerim.pointAtPercent(pct));
+    }
 
-    // ── 3. Active band — single filled shape + gradient overlay ──────────
-    {
-        double valuePct  = (m_displayValue - m_cfg.minVal)
-                        / (m_cfg.maxVal   - m_cfg.minVal);
-        double activePct = spanPct * qBound(0.0, valuePct, 1.0);
+    // Draw the static dark track band using our newly calculated points
+    if (!m_outerPts.isEmpty()) {
+        QPainterPath trackBand;
+        trackBand.moveTo(m_outerPts.first());
+        for (int i = 1; i <= numSteps; i++) trackBand.lineTo(m_outerPts[i]);
+        for (int i = numSteps; i >= 0; i--) trackBand.lineTo(m_innerPts[i]);
+        trackBand.closeSubpath();
+        p.fillPath(trackBand, QColor(25, 15, 5));
+    }
 
-        if (activePct > 0.001) {
-            double endPct = qMin(startPct + activePct, 0.9999);
+    // ── 4. Draw Inner Card ──
+    double innerCardPad    = S * 0.150;
+    double innerCardRadius = cardRadius * 0.80;
+    QRectF innerCardRect(cx - S/2 + innerCardPad, cy - S/2 + innerCardPad, S - innerCardPad*2, S - innerCardPad*2);
+    QPainterPath innerCardPath;
+    innerCardPath.addRoundedRect(innerCardRect, innerCardRadius, innerCardRadius);
+    p.fillPath(innerCardPath, QColor(16, 9, 3));
+    p.setPen(QPen(C_BORDER, 0.8));
+    p.drawPath(innerCardPath);
 
+    // ── 5. Layout and Draw Dim Ticks ──
+    m_ticks.clear();
+    double step = m_cfg.tickStep > 0 ? m_cfg.tickStep : (m_cfg.maxVal - m_cfg.minVal) / 4.0;
+    int numTicks = qRound((m_cfg.maxVal - m_cfg.minVal) / step);
+    int lblFs = qBound(6, qRound(S * 0.028), 12);
+    p.setFont(QFont(appFont(), lblFs));
+
+    for (int i = 0; i <= numTicks; i++) {
+        double pct = (double)i / (double)numTicks;
+        double perimPct = startPct + pct * spanPct;
+        while (perimPct > 1.0) perimPct -= 1.0;
+
+        QPointF onArc = outerPerim.pointAtPercent(perimPct);
+        QPointF toCenter(cx - onArc.x(), cy - onArc.y());
+        double dist = qSqrt(toCenter.x()*toCenter.x() + toCenter.y()*toCenter.y());
+        
+        if (dist > 1.0) {
+            QPointF unit(toCenter.x()/dist, toCenter.y()/dist);
+            double inset = (innerPad - outerPad) * 0.52 + lblFs;
+            double lx = onArc.x() + unit.x() * inset;
+            double ly = onArc.y() + unit.y() * inset;
+            
+            double val = m_cfg.minVal + pct * (m_cfg.maxVal - m_cfg.minVal);
+            TickData td;
+            td.text = QString::number(qRound(val));
+            td.rect = QRectF(lx - lblFs*3, ly - lblFs, lblFs*6, lblFs*2);
+            td.valuePct = pct;
+            m_ticks.append(td);
+
+            // Draw the inactive/dim text directly onto the cache
+            p.setPen(C_DIM);
+            p.drawText(td.rect, Qt::AlignCenter, td.text);
+        }
+    }
+
+    // ── 6. Draw Unit Label ──
+    double icW = S - innerCardPad * 2;
+    int unitFs = qBound(8, qRound(icW * 0.075), 20);
+    p.setPen(C_DIM);
+    p.setFont(QFont(appFont(), unitFs));
+    p.drawText(QRectF(cx - icW/2.0, cy + icW*0.18, icW, icW*0.16), Qt::AlignCenter, m_cfg.unit);
+
+    // ── 7. Pre-calculate layout for main dynamic value ──
+    m_valFs = qBound(16, qRound(icW * 0.22), 72);
+    m_shadowValueRect = QRectF(cx - icW/2.0 + 2, cy - icW*0.24 + 2, icW, icW*0.48);
+    m_mainValueRect = QRectF(cx - icW/2.0, cy - icW*0.24, icW, icW*0.48);
+}
+
+void GaugeWidget::paintEvent(QPaintEvent *) {
+    // Check if window resized or just booted up
+    if (m_cacheDirty) {
+        rebuildCache();
+        m_cacheDirty = false;
+    }
+
+    QPainter p(this);
+    p.setRenderHint(QPainter::Antialiasing);
+
+    // 1. Draw solid background
+    p.fillRect(rect(), C_BG);
+    
+    // 2. Paste the entire static image (Virtually 0% CPU)
+    p.drawPixmap(0, 0, m_bgCache);
+
+    // 3. Calculate current value percentage (Required for glowing ticks)
+    double valuePct = (m_displayValue - m_cfg.minVal) / (m_cfg.maxVal - m_cfg.minVal);
+    valuePct = qBound(0.0, valuePct, 1.0);
+
+    if (valuePct > 0.001 && !m_outerPts.isEmpty()) {
+        int ptCount = qRound(valuePct * (m_outerPts.size() - 1));
+        if (ptCount > 0) {
             QPainterPath activeBand;
-            if (endPct <= 1.0) {
-                activeBand = bandPath(outerPerim, innerPerim,
-                                    startPct, endPct);
-            } else {
-                QPainterPath seg1 = bandPath(outerPerim, innerPerim,
-                                            startPct, 1.0);
-                QPainterPath seg2 = bandPath(outerPerim, innerPerim,
-                                            0.0, endPct - 1.0);
-                activeBand = seg1;
-                activeBand.addPath(seg2);
-            }
+            activeBand.moveTo(m_outerPts[0]);
+            for (int i = 1; i <= ptCount; i++) activeBand.lineTo(m_outerPts[i]);
+            for (int i = ptCount; i >= 0; i--) activeBand.lineTo(m_innerPts[i]);
+            activeBand.closeSubpath();
 
-            QPointF ptStart = outerPerim.pointAtPercent(
-                                qBound(0.0, startPct, 1.0));
-            QPointF ptEnd   = outerPerim.pointAtPercent(
-                                qBound(0.0, endPct, 1.0));
-
-            QLinearGradient grad(ptStart, ptEnd);
+            // The gradient gives it the glowing orange tail effect
+            QLinearGradient grad(m_outerPts.first(), m_outerPts[ptCount]);
             grad.setColorAt(0.0, QColor(30,  14,  3, 255));
             grad.setColorAt(0.3, QColor(80,  35,  5, 255));
             grad.setColorAt(0.7, QColor(150, 68,  8, 255));
@@ -183,100 +224,34 @@ void GaugeWidget::paintEvent(QPaintEvent *) {
         }
     }
 
-    // ── 4. Inner card — fully covers band interior ────────────────────────
-    double innerCardPad    = S * 0.150;
-    double innerCardRadius = cardRadius * 0.80;
-    QRectF innerCardRect(cx - S/2 + innerCardPad, cy - S/2 + innerCardPad,
-                         S - innerCardPad*2,       S - innerCardPad*2);
-    QPainterPath innerCardPath;
-    innerCardPath.addRoundedRect(innerCardRect, innerCardRadius,
-                                  innerCardRadius);
-    p.fillPath(innerCardPath, QColor(16, 9, 3));
-    p.setPen(QPen(C_BORDER, 0.8));
-    p.drawPath(innerCardPath);
-
-    // ── 5. Tick labels with smooth radial dark glow ───────────────────────
-    double step     = m_cfg.tickStep > 0
-                    ? m_cfg.tickStep
-                    : (m_cfg.maxVal - m_cfg.minVal) / 4.0;
-    int    numTicks = qRound((m_cfg.maxVal - m_cfg.minVal) / step);
-    int    lblFs    = qBound(6, qRound(S * 0.028), 12);
-
-    double valuePct = (m_displayValue - m_cfg.minVal)
-                    / (m_cfg.maxVal   - m_cfg.minVal);
-
-    for (int i = 0; i <= numTicks; i++) {
-        double pct      = (double)i / (double)numTicks;
-        double perimPct = startPct + pct * spanPct;
-        while (perimPct > 1.0) perimPct -= 1.0;
-        perimPct = qBound(0.0, perimPct, 1.0);
-
-        QPointF onArc    = outerPerim.pointAtPercent(perimPct);
-        QPointF toCenter(cx - onArc.x(), cy - onArc.y());
-        double  dist     = qSqrt(toCenter.x()*toCenter.x()
-                                + toCenter.y()*toCenter.y());
-        if (dist < 1.0) continue;
-
-        QPointF unit(toCenter.x()/dist, toCenter.y()/dist);
-        double  inset = (innerPad - outerPad) * 0.52 + lblFs;
-        double  lx    = onArc.x() + unit.x() * inset;
-        double  ly    = onArc.y() + unit.y() * inset;
-
-        double  val = m_cfg.minVal + pct * (m_cfg.maxVal - m_cfg.minVal);
-        QString txt = QString::number(qRound(val));
-        bool    overActive = (pct <= valuePct);
-
-        QRectF labelRect(lx - lblFs*3, ly - lblFs,
-                         lblFs*6,      lblFs*2);
-
-        if (overActive) {
-            // Shadow pass — direct, no offscreen buffer
-            double brightness = qBound(0.0,
-                                  pct / qMax(valuePct, 0.001), 1.0);
-            // Draw shadow with offset
+    // 4. Draw ONLY the glowing ticks (over top of the dim cached ticks)
+    int lblFs = qBound(6, qRound(qMin(width(), height()) * 0.028), 12);
+    p.setFont(QFont(appFont(), lblFs, QFont::Bold));
+    
+    for (const TickData &td : m_ticks) {
+        if (td.valuePct <= valuePct) {
+            double brightness = qBound(0.0, td.valuePct / qMax(valuePct, 0.001), 1.0);
+            
+            // Drop Shadow
             p.setPen(QColor(0, 0, 0, 160));
-            p.setFont(QFont(appFont(), lblFs, QFont::Bold));
-            p.drawText(labelRect.translated(1, 1),
-                       Qt::AlignCenter, txt);
+            p.drawText(td.rect.translated(1, 1), Qt::AlignCenter, td.text);
 
-            // Text — color scales with brightness
+            // Bright Text
             int cr = qRound(190 + brightness * 65);
             int cg = qRound(140 + brightness * 95);
             int cb = qRound( 80 + brightness * 145);
             p.setPen(QColor(cr, cg, cb, 255));
-            p.drawText(labelRect, Qt::AlignCenter, txt);
-
-        } else {
-            p.setPen(C_DIM);
-            p.setFont(QFont(appFont(), lblFs));
-            p.drawText(labelRect, Qt::AlignCenter, txt);
+            p.drawText(td.rect, Qt::AlignCenter, td.text);
         }
     }
 
-    // ── 6. Main value ─────────────────────────────────────────────────────
-    double icW   = S - innerCardPad * 2;
-    int    valFs = qBound(16, qRound(icW * 0.22), 72);
-
-    // Shadow
-    p.setPen(QColor(0, 0, 0, 160));
-    p.setFont(QFont(appFont(), valFs, QFont::Bold));
-    p.drawText(QRectF(cx - icW/2.0 + 2, cy - icW*0.24 + 2,
-                      icW, icW*0.48),
-               Qt::AlignCenter,
-               QString::number(qRound(m_displayValue)));
-
-    // Value
-    p.setPen(C_WHITE);
-    p.drawText(QRectF(cx - icW/2.0, cy - icW*0.24,
-                      icW,           icW*0.48),
-               Qt::AlignCenter,
-               QString::number(qRound(m_displayValue)));
-
-    // ── 7. Unit label ─────────────────────────────────────────────────────
-    int unitFs = qBound(8, qRound(icW * 0.075), 20);
-    p.setPen(C_DIM);
-    p.setFont(QFont(appFont(), unitFs));
-    p.drawText(QRectF(cx - icW/2.0, cy + icW*0.18,
-                      icW,           icW*0.16),
-               Qt::AlignCenter, m_cfg.unit);
+    // 5. Draw Main Value Text
+    QString valText = QString::number(qRound(m_displayValue));
+    p.setFont(QFont(appFont(), m_valFs, QFont::Bold));
+    
+    p.setPen(QColor(0, 0, 0, 160)); // Shadow
+    p.drawText(m_shadowValueRect, Qt::AlignCenter, valText);
+    
+    p.setPen(C_WHITE); // Main
+    p.drawText(m_mainValueRect, Qt::AlignCenter, valText);
 }
